@@ -12,7 +12,7 @@ class ContextReplayBuffer(ReplayBuffer):
         n_envs: int = 1,
         optimize_memory_usage: bool = False,
         handle_timeout_termination: bool = True,
-    )
+    ):
         super(ContextReplayBuffer, self).__init__(buffer_size, observation_space, action_space, device, n_envs=n_envs, optimize_memory_usage=optimize_memory_usage, handle_timeout_termination=handle_timeout_termination)
         self.contexts = np.zeros((self.buffer_size, self.n_envs, context_dim), dtype=np.float32)
         if explicit_context:
@@ -87,7 +87,7 @@ class PrioritizedContextReplayBuffer(ContextReplayBuffer):
         n_envs: int = 1,
         optimize_memory_usage: bool = False,
         handle_timeout_termination: bool = True,
-    )
+    ):
         super(ContextReplayBuffer, self).__init__(buffer_size, observation_space, action_space, context_dim, explicit_context, device, n_envs=n_envs, optimize_memory_usage=optimize_memory_usage, handle_timeout_termination=handle_timeout_termination)
         self.alpha = alpha
         self.epsilon = 0.01
@@ -118,4 +118,32 @@ class PrioritizedContextReplayBuffer(ContextReplayBuffer):
         sample_context = np.random.choice(contexts, p=context_weights)
         eligible_indices = [i for i in range(len(self.contexts)) if self.contexts[i] == sample_context]
         batch_inds = np.random.choice(eligible_indices, size=batch_size)
+        return self._get_samples(batch_inds, env=env)
+
+
+class ContextDiversificationReplayBuffer(ContextReplayBuffer):
+    def __init(self,
+        buffer_size: int,
+        observation_space: spaces.Space,
+        action_space: spaces.Space,
+        context_dim: int,
+        explicit_context: bool = True,
+        device: Union[th.device, str] = "cpu",
+        n_envs: int = 1,
+        optimize_memory_usage: bool = False,
+        handle_timeout_termination: bool = True,
+    ):
+        super(ContextReplayBuffer, self).__init__(buffer_size, observation_space, action_space, context_dim, explicit_context, device, n_envs=n_envs, optimize_memory_usage=optimize_memory_usage, handle_timeout_termination=handle_timeout_termination)
+
+    def sample(self, batch_size: int, env: Optional[VecNormalize] = None) -> ReplayBufferSamples:
+        available_contexts = np.unique(self.contexts)
+        if len(available_contexts) >= batch_size:
+            sampled_contexts = np.random.choice(available_contexts, size=batch_size)
+        else:
+            sampled_contexts = np.concatenate((available_contexts,np.random.choice(available_contexts, size=batch_size-len(available_contexts))))
+
+        batch_inds = []
+        for c in sampled_contexts:
+            context_indices = [i for i in range(self.pos) if self.contexts[i]==c]
+            batch_inds.append(np.random.choice(context_indices))
         return self._get_samples(batch_inds, env=env)
