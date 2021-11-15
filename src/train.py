@@ -235,6 +235,16 @@ def main(args, unknown_args, parser):
         init_sb3_tensorboard=False  # set to False if using SubprocVecEnv
     )
 
+    # TODO make less hacky
+    train_args_fname = os.path.join(logger.logdir, "trial_setup.json")
+    with open(train_args_fname, 'w') as file:
+        json.dump(args.__dict__, file, indent="\t")
+
+    contexts = get_contexts(args)
+    contexts_fname = os.path.join(logger.logdir, "contexts_train.json")
+    with open(contexts_fname, 'w') as file:
+        json.dump(contexts, file, indent="\t")
+
     hyperparams = {}
     env_wrapper = None
     normalize = False
@@ -255,12 +265,16 @@ def main(args, unknown_args, parser):
         hyperparams["policy"] = "MlpPolicy"
         if args.replay_buffer == "context_uniform":
             hyperparams["replay_buffer_class"] = ContextReplayBuffer
+            hyperparams["replay_buffer_kwargs"] = {"explicit_context": not(args.hide_context), "context_dim": np.shape(contexts[0])}
         elif args.replay_buffer == "context_uniform_prio":
             hyperparams["replay_buffer_class"] = PrioritizedContextReplayBuffer
+            hyperparams["replay_buffer_kwargs"] = {"explicit_context": not(args.hide_context), "context_dim": np.shape(contexts[0])}
         elif args.replay_buffer == "context_div":
             hyperparams["replay_buffer_class"] = ContextDiversificationReplayBuffer
+            hyperparams["replay_buffer_kwargs"] = {"explicit_context": not(args.hide_context), "context_dim": np.shape(contexts[0])}
         else:
             hyperparams["replay_buffer_class"] = None
+            hyperparams["replay_buffer_kwargs"] = {}
         args.num_envs = 1
 
         if args.env == "CARLAnt":
@@ -277,12 +291,19 @@ def main(args, unknown_args, parser):
         hyperparams["policy"] = "MlpPolicy"
         if args.replay_buffer == "context_uniform":
             hyperparams["replay_buffer_class"] = ContextReplayBuffer
+            hyperparams["replay_buffer_kwargs"] = {"explicit_context": not (args.hide_context),
+                                                   "context_dim": np.shape(contexts[0])}
         elif args.replay_buffer == "context_uniform_prio":
             hyperparams["replay_buffer_class"] = PrioritizedContextReplayBuffer
+            hyperparams["replay_buffer_kwargs"] = {"explicit_context": not (args.hide_context),
+                                                   "context_dim": np.shape(contexts[0])}
         elif args.replay_buffer == "context_div":
             hyperparams["replay_buffer_class"] = ContextDiversificationReplayBuffer
+            hyperparams["replay_buffer_kwargs"] = {"explicit_context": not (args.hide_context),
+                                                   "context_dim": np.shape(contexts[0])}
         else:
             hyperparams["replay_buffer_class"] = None
+            hyperparams["replay_buffer_kwargs"] = {}
         args.num_envs = 1
 
         if args.env == "CARLLunarLanderEnv":
@@ -303,16 +324,6 @@ def main(args, unknown_args, parser):
             }
 
     logger.write_trial_setup()
-
-    # TODO make less hacky
-    train_args_fname = os.path.join(logger.logdir, "trial_setup.json")
-    with open(train_args_fname, 'w') as file:
-        json.dump(args.__dict__, file, indent="\t")
-
-    contexts = get_contexts(args)
-    contexts_fname = os.path.join(logger.logdir, "contexts_train.json")
-    with open(contexts_fname, 'w') as file:
-        json.dump(contexts, file, indent="\t")
 
     env_logger = logger if vec_env_cls is not SubprocVecEnv else None
     # make meta-env
