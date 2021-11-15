@@ -46,7 +46,6 @@ class ContextReplayBuffer(ReplayBuffer):
             action: np.ndarray,
             reward: np.ndarray,
             done: np.ndarray,
-            context: np.ndarray,
             infos: List[Dict[str, Any]],
     ) -> None:
         # Copy to avoid modification by reference
@@ -60,7 +59,7 @@ class ContextReplayBuffer(ReplayBuffer):
         self.actions[self.pos] = np.array(action).copy()
         self.rewards[self.pos] = np.array(reward).copy()
         self.dones[self.pos] = np.array(done).copy()
-        self.contexts[self.pos] = np.array(context).copy()
+        self.contexts[self.pos] = [i["context"].copy() for i in infos]
 
         if self.handle_timeout_termination:
             self.timeouts[self.pos] = np.array([info.get("TimeLimit.truncated", False) for info in infos])
@@ -112,7 +111,6 @@ class PrioritizedContextReplayBuffer(ContextReplayBuffer):
             action: np.ndarray,
             reward: np.ndarray,
             done: np.ndarray,
-            context: np.ndarray,
             td_errors: np.ndarray,
             infos: List[Dict[str, Any]],
     ) -> None:
