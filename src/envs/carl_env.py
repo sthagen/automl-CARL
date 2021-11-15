@@ -228,7 +228,8 @@ class CARLEnv(Wrapper):
         self.step_counter += 1
         if self.step_counter >= self.cutoff:
             done = True
-        info["context"] = np.array(self.context.values())
+        #info["context"] = np.array(self.context.values())
+        info = np.array(self.context.values())
         return state, reward, done, info
 
     def __getattr__(self, name):
