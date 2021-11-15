@@ -1,5 +1,6 @@
 import numpy as np
 from stable_baselines3.common.buffers import ReplayBuffer
+from gym import spaces
 
 class ContextReplayBuffer(ReplayBuffer):
     def __init(self,
