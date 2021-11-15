@@ -1,5 +1,5 @@
 import numpy as np
-from stable_baslines3.common.buffers import ReplayBuffer
+from stable_baselines3.common.buffers import ReplayBuffer
 
 class ContextReplayBuffer(ReplayBuffer):
     def __init(self,
