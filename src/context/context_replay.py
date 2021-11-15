@@ -3,6 +3,13 @@ import torch as th
 
 from stable_baselines3.common.buffers import ReplayBuffer
 from stable_baselines3.common.vec_env.vec_normalize import VecNormalize
+from stable_baselines3.common.type_aliases import (
+    DictReplayBufferSamples,
+    DictRolloutBufferSamples,
+    ReplayBufferSamples,
+    RolloutBufferSamples,
+)
+
 from gym import spaces
 from typing import List, Dict, Union, Optional, Any
 
