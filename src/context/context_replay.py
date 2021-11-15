@@ -28,8 +28,7 @@ class ContextReplayBuffer(ReplayBuffer):
         super(ContextReplayBuffer, self).__init__(buffer_size, observation_space, action_space, device, n_envs=n_envs, optimize_memory_usage=optimize_memory_usage, handle_timeout_termination=handle_timeout_termination)
         self.contexts = np.zeros((self.buffer_size, self.n_envs, context_dim), dtype=np.float32)
         if explicit_context:
-            self.obs_shape = [self.obs_shape[0] - context_dim]
-            print(self.obs_shape)
+            self.obs_shape = (self.obs_shape[0] - context_dim,)
             self.observations = np.zeros((self.buffer_size, self.n_envs) + self.obs_shape,
                                          dtype=observation_space.dtype)
 
