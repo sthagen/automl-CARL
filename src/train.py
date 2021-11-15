@@ -4,7 +4,6 @@ from xvfbwrapper import Xvfb
 import configargparse
 import yaml
 import json
-import numpy as np
 
 import sys
 import inspect
@@ -266,13 +265,13 @@ def main(args, unknown_args, parser):
         hyperparams["policy"] = "MlpPolicy"
         if args.replay_buffer == "context_uniform":
             hyperparams["replay_buffer_class"] = ContextReplayBuffer
-            hyperparams["replay_buffer_kwargs"] = {"explicit_context": not(args.hide_context), "context_dim": np.shape(contexts[0])}
+            hyperparams["replay_buffer_kwargs"] = {"explicit_context": not(args.hide_context), "context_dim": len(contexts[0])}
         elif args.replay_buffer == "context_uniform_prio":
             hyperparams["replay_buffer_class"] = PrioritizedContextReplayBuffer
-            hyperparams["replay_buffer_kwargs"] = {"explicit_context": not(args.hide_context), "context_dim": np.shape(contexts[0])}
+            hyperparams["replay_buffer_kwargs"] = {"explicit_context": not(args.hide_context), "context_dim": len(contexts[0])}
         elif args.replay_buffer == "context_div":
             hyperparams["replay_buffer_class"] = ContextDiversificationReplayBuffer
-            hyperparams["replay_buffer_kwargs"] = {"explicit_context": not(args.hide_context), "context_dim": np.shape(contexts[0])}
+            hyperparams["replay_buffer_kwargs"] = {"explicit_context": not(args.hide_context), "context_dim": len(contexts[0])}
         else:
             hyperparams["replay_buffer_class"] = None
             hyperparams["replay_buffer_kwargs"] = {}
@@ -293,15 +292,15 @@ def main(args, unknown_args, parser):
         if args.replay_buffer == "context_uniform":
             hyperparams["replay_buffer_class"] = ContextReplayBuffer
             hyperparams["replay_buffer_kwargs"] = {"explicit_context": not (args.hide_context),
-                                                   "context_dim": np.shape(contexts[0])}
+                                                   "context_dim": len(contexts[0])}
         elif args.replay_buffer == "context_uniform_prio":
             hyperparams["replay_buffer_class"] = PrioritizedContextReplayBuffer
             hyperparams["replay_buffer_kwargs"] = {"explicit_context": not (args.hide_context),
-                                                   "context_dim": np.shape(contexts[0])}
+                                                   "context_dim": len(contexts[0])}
         elif args.replay_buffer == "context_div":
             hyperparams["replay_buffer_class"] = ContextDiversificationReplayBuffer
             hyperparams["replay_buffer_kwargs"] = {"explicit_context": not (args.hide_context),
-                                                   "context_dim": np.shape(contexts[0])}
+                                                   "context_dim": len(contexts[0])}
         else:
             hyperparams["replay_buffer_class"] = None
             hyperparams["replay_buffer_kwargs"] = {}
