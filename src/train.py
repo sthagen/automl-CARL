@@ -4,6 +4,7 @@ from xvfbwrapper import Xvfb
 import configargparse
 import yaml
 import json
+import numpy as np
 
 import sys
 import inspect
