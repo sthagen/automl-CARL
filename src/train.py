@@ -29,6 +29,7 @@ from src.training.trial_logger import TrialLogger
 
 from src.context.sampling import sample_contexts
 from src.utils.hyperparameter_processing import preprocess_hyperparams
+from src.context.context_replay import ContextReplayBuffer, PrioritizedContextReplayBuffer, ContextDiversificationReplayBuffer
 
 
 def get_parser() -> configargparse.ArgumentParser:
@@ -183,6 +184,15 @@ def get_parser() -> configargparse.ArgumentParser:
         action="store_true"
     )
 
+    parser.add_argument(
+        "--replay_buffer",
+        default="standard",
+        choices=["standard", "context_uniform", "context_uniform_prio", "context_div"],
+        help="Context sorting in the replay buffer. Standard replay buffer does not care about context, "
+             "context uniform buffers aim to provide samples from a single context, either prioritized or not"
+             "and the diversification buffer draws samples from as many contexts as possible per batch."
+    )
+
     return parser
 
 
@@ -243,6 +253,14 @@ def main(args, unknown_args, parser):
     post = None
     if args.agent == "DDPG":
         hyperparams["policy"] = "MlpPolicy"
+        if args.replay_buffer == "context_uniform":
+            hyperparams["replay_buffer_class"] = ContextReplayBuffer
+        elif args.replay_buffer = "context_uniform_prio":
+            hyperparams["replay_buffer_class"] = PrioritizedContextReplayBuffer
+        elif args.replay_buffer = "context_div":
+            hyperparams["replay_buffer_class"] = ContextDiversificationReplayBuffer
+        else:
+            hyperparams["replay_buffer_class"] = None
         args.num_envs = 1
 
         if args.env == "CARLAnt":
@@ -257,6 +275,14 @@ def main(args, unknown_args, parser):
 
     if args.agent == "DQN":
         hyperparams["policy"] = "MlpPolicy"
+        if args.replay_buffer == "context_uniform":
+            hyperparams["replay_buffer_class"] = ContextReplayBuffer
+        elif args.replay_buffer = "context_uniform_prio":
+            hyperparams["replay_buffer_class"] = PrioritizedContextReplayBuffer
+        elif args.replay_buffer = "context_div":
+            hyperparams["replay_buffer_class"] = ContextDiversificationReplayBuffer
+        else:
+            hyperparams["replay_buffer_class"] = None
         args.num_envs = 1
 
         if args.env == "CARLLunarLanderEnv":
