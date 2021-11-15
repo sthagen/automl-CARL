@@ -2,6 +2,7 @@ import numpy as np
 import torch as th
 
 from stable_baselines3.common.buffers import ReplayBuffer
+from stable_baselines3.common.vec_env.vec_normalize import VecNormalize
 from gym import spaces
 from typing import List, Dict, Union, Optional, Any
 
