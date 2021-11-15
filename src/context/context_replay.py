@@ -1,4 +1,6 @@
 import numpy as np
+import torch as th
+
 from stable_baselines3.common.buffers import ReplayBuffer
 from gym import spaces
 from typing import List, Dict, Union, Optional
