@@ -26,7 +26,11 @@ class ContextReplayBuffer(ReplayBuffer):
         explicit_context: bool = True,
     ):
         super(ContextReplayBuffer, self).__init__(buffer_size, observation_space, action_space, device, n_envs=n_envs, optimize_memory_usage=optimize_memory_usage, handle_timeout_termination=handle_timeout_termination)
+        self.context_dim = context_dim
+        if not self.context_dim:
+            raise ValueError("Please add the dimension of your context features")
         self.contexts = np.zeros((self.buffer_size, self.n_envs, context_dim), dtype=np.float32)
+        self.explicit_context = explicit_context
         if explicit_context:
             self.obs_shape = (self.obs_shape[0] - context_dim,)
             self.observations = np.zeros((self.buffer_size, self.n_envs) + self.obs_shape,
@@ -49,7 +53,11 @@ class ContextReplayBuffer(ReplayBuffer):
             infos: List[Dict[str, Any]],
     ) -> None:
         # Copy to avoid modification by reference
-        self.observations[self.pos] = np.array(obs).copy()
+        if self.explicit_context:
+            complete_obs = np.array(obs).copy()
+            self.observations[self.pos] = [ob[:-self.context_dim] for ob in complete_obs]
+        else:
+            self.observations[self.pos] = np.array(obs).copy()
 
         if self.optimize_memory_usage:
             self.observations[(self.pos + 1) % self.buffer_size] = np.array(next_obs).copy()
