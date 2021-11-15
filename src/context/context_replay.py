@@ -18,7 +18,7 @@ class ContextReplayBuffer(ReplayBuffer):
         buffer_size: int,
         observation_space: spaces.Space,
         action_space: spaces.Space,
-        context_dim: int,
+        context_dim: int = None,
         explicit_context: bool = True,
         device: Union[th.device, str] = "cpu",
         n_envs: int = 1,
