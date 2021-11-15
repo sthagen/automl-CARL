@@ -18,12 +18,12 @@ class ContextReplayBuffer(ReplayBuffer):
         buffer_size: int,
         observation_space: spaces.Space,
         action_space: spaces.Space,
-        context_dim: int = None,
-        explicit_context: bool = True,
         device: Union[th.device, str] = "cpu",
         n_envs: int = 1,
         optimize_memory_usage: bool = False,
         handle_timeout_termination: bool = True,
+        context_dim: int = None,
+        explicit_context: bool = True,
     ):
         super(ContextReplayBuffer, self).__init__(buffer_size, observation_space, action_space, device, n_envs=n_envs, optimize_memory_usage=optimize_memory_usage, handle_timeout_termination=handle_timeout_termination)
         self.contexts = np.zeros((self.buffer_size, self.n_envs, context_dim), dtype=np.float32)
