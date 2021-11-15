@@ -255,9 +255,9 @@ def main(args, unknown_args, parser):
         hyperparams["policy"] = "MlpPolicy"
         if args.replay_buffer == "context_uniform":
             hyperparams["replay_buffer_class"] = ContextReplayBuffer
-        elif args.replay_buffer = "context_uniform_prio":
+        elif args.replay_buffer == "context_uniform_prio":
             hyperparams["replay_buffer_class"] = PrioritizedContextReplayBuffer
-        elif args.replay_buffer = "context_div":
+        elif args.replay_buffer == "context_div":
             hyperparams["replay_buffer_class"] = ContextDiversificationReplayBuffer
         else:
             hyperparams["replay_buffer_class"] = None
