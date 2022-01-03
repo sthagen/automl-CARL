@@ -15,7 +15,7 @@ DEFAULT_CONTEXT = {
 }
 
 CONTEXT_BOUNDS = {
-    "gravity": (0.1, np.inf, float), # Positive gravity
+    "gravity": (0.1, 100, float), # Positive gravity
     "masscart": (0.1, 10, float), # Cart mass can be varied by a factor of 10
     "masspole":  (0.01, 1, float), # Pole mass can be varied by a factor of 10
     "pole_length": (0.05, 5, float), # Pole length can be varied by a factor of 10

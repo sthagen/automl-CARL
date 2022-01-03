@@ -263,43 +263,54 @@ def main(args, unknown_args, parser):
     post = None
     if args.agent == "DDPG":
         hyperparams["policy"] = "MlpPolicy"
+        if args.env == "CARLPendulumEnv":
+            feature = 'g'
+        else:
+            feature = 'gravity'
         if args.replay_buffer == "context_uniform":
             hyperparams["replay_buffer_class"] = ContextReplayBuffer
-            hyperparams["replay_buffer_kwargs"] = {"explicit_context": not(args.hide_context), "context_dim": len(contexts[0])}
+            hyperparams["replay_buffer_kwargs"] = {"context_feature": feature, "explicit_context": not(args.hide_context), "context_dim": len(contexts[0])}
         elif args.replay_buffer == "context_uniform_prio":
             hyperparams["replay_buffer_class"] = PrioritizedContextReplayBuffer
-            hyperparams["replay_buffer_kwargs"] = {"explicit_context": not(args.hide_context), "context_dim": len(contexts[0])}
+            hyperparams["replay_buffer_kwargs"] = {"context_feature": feature, "explicit_context": not(args.hide_context), "context_dim": len(contexts[0])}
         elif args.replay_buffer == "context_div":
             hyperparams["replay_buffer_class"] = ContextDiversificationReplayBuffer
-            hyperparams["replay_buffer_kwargs"] = {"explicit_context": not(args.hide_context), "context_dim": len(contexts[0])}
+            hyperparams["replay_buffer_kwargs"] = {"context_feature": feature, "explicit_context": not(args.hide_context), "context_dim": len(contexts[0])}
         else:
             hyperparams["replay_buffer_class"] = None
             hyperparams["replay_buffer_kwargs"] = {}
         args.num_envs = 1
 
-        if args.env == "CARLAnt":
-            schedule = True
-            switching_point = 4
-            hyperparams = {"batch_size": 128, "learning_rate": 3e-05, "gamma": 0.99, "gae_lambda": 0.8, "ent_coef": 0.0, "max_grad_norm": 1.0, "vf_coef": 1.0}
-            post = {"batch_size": 128, "learning_rate": 0.00038113442133180797, "gamma": 0.887637734413147, "gae_lambda": 0.800000011920929, "ent_coef": 0.0, "max_grad_norm": 1.0, "vf_coef": 1.0}
-            hyperparams["policy"] = "MlpPolicy"
+        #if args.env == "CARLAnt":
+            #schedule = True
+            #switching_point = 4
+            #hyperparams = {"batch_size": 128, "learning_rate": 3e-05, "gamma": 0.99, "gae_lambda": 0.8, "ent_coef": 0.0, "max_grad_norm": 1.0, "vf_coef": 1.0}
+            #post = {"batch_size": 128, "learning_rate": 0.00038113442133180797, "gamma": 0.887637734413147, "gae_lambda": 0.800000011920929, "ent_coef": 0.0, "max_grad_norm": 1.0, "vf_coef": 1.0}
+            #hyperparams["policy"] = "MlpPolicy"
 
     if args.agent == "A2C":
         hyperparams["policy"] = "MlpPolicy"
 
     if args.agent == "DQN":
         hyperparams["policy"] = "MlpPolicy"
+        if args.env == "CARLLunarLanderEnv":
+            feature = "GRAVITY_X"
+        else:
+            feature = "gravity"
         if args.replay_buffer == "context_uniform":
             hyperparams["replay_buffer_class"] = ContextReplayBuffer
             hyperparams["replay_buffer_kwargs"] = {"explicit_context": not (args.hide_context),
+                                                   "context_feature": feature, 
                                                    "context_dim": len(contexts[0])}
         elif args.replay_buffer == "context_uniform_prio":
             hyperparams["replay_buffer_class"] = PrioritizedContextReplayBuffer
             hyperparams["replay_buffer_kwargs"] = {"explicit_context": not (args.hide_context),
+                                                   "context_feature": feature, 
                                                    "context_dim": len(contexts[0])}
         elif args.replay_buffer == "context_div":
             hyperparams["replay_buffer_class"] = ContextDiversificationReplayBuffer
             hyperparams["replay_buffer_kwargs"] = {"explicit_context": not (args.hide_context),
+                                                   "context_feature": feature,                                
                                                    "context_dim": len(contexts[0])}
         else:
             hyperparams["replay_buffer_class"] = None
