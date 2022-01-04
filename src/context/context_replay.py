@@ -149,7 +149,8 @@ class PrioritizedContextReplayBuffer(ContextReplayBuffer):
         super(ContextReplayBuffer, self).__init__(buffer_size, observation_space, action_space, context_dim, explicit_context, device, n_envs=n_envs, optimize_memory_usage=optimize_memory_usage, handle_timeout_termination=handle_timeout_termination)
         self.alpha = alpha
         self.epsilon = 0.01
-        self.priorities = self.contexts = np.zeros((self.buffer_size, self.n_envs), dtype=np.float32)
+        self.priority_base = self.reward_base.copy()
+        self.priorities = dict()
 
     def add(
             self,
@@ -161,21 +162,28 @@ class PrioritizedContextReplayBuffer(ContextReplayBuffer):
             td_errors: np.ndarray,
             infos: List[Dict[str, Any]],
     ) -> None:
-        super().add(obs, next_obs, action, reward, done, context, infos)
-        self.priorities[self.pos] = np.array(td_errors).copy() * self.alpha + self.epsilon
+        for i in range(len(infos)):
+            cv = infos[i]["context"][self.context_feature]
+            if not cv in self.observations.keys():
+                self.priorities[cv] = self.priority_base.copy()
+                self.priorities[cv][0] = np.array(td_errors.copy()) * self.alpha + self.epsilon
+            else:
+                self.priorities[cv][self.pos[cv]] = np.array(td_errors.copy()) * self.alpha + self.epsilon
+        super().add(obs, next_obs, action, reward, done, infos)
 
     def sample(self, batch_size: int, env: Optional[VecNormalize] = None) -> ReplayBufferSamples:
-        contexts = np.unique(self.contexts)
-        context_weights = []
-        for c in contexts:
-            context_indices = [i for i in range(self.pos) if self.contexts[i]==c]
-            context_priorities = [self.priorities[i] for i in context_indices]
-            context_weights.append(max(context_priorities))
+        contexts = self.contexts
+        context_weights = [max(contexts[k]) for k in contexts.keys()]
+        #for c in contexts:
+        #    context_indices = [i for i in range(self.pos) if self.contexts[i]==c]
+        #    context_priorities = [self.priorities[i] for i in context_indices]
+        #    context_weights.append(max(context_priorities))
 
         sample_context = np.random.choice(contexts, p=context_weights)
-        eligible_indices = [i for i in range(len(self.contexts)) if self.contexts[i] == sample_context]
+        #eligible_indices = [i for i in range(len(self.contexts)) if self.contexts[i] == sample_context]
+        eligible_indices = np.arange(len(np.nonzero(self.observations[sample_context])))
         batch_inds = np.random.choice(eligible_indices, size=batch_size)
-        return self._get_samples(batch_inds, env=env)
+        return self._get_samples(batch_inds, sample_context, env=env)
 
 
 class ContextDiversificationReplayBuffer(ContextReplayBuffer):
