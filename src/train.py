@@ -17,6 +17,7 @@ from stable_baselines3.common.callbacks import EvalCallback, EveryNTimesteps, Ch
 from stable_baselines3.common.vec_env.vec_normalize import VecNormalize
 from stable_baselines3.common.vec_env import SubprocVecEnv, DummyVecEnv
 from stable_baselines3 import DDPG, PPO, A2C, DQN
+from context.prio_off_policy import PrioDQN
 
 # from classic_control import CARLMountainCarEnv
 # importlib.reload(classic_control.meta_mountaincar)
