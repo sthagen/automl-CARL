@@ -1,3 +1,4 @@
+import random
 import numpy as np
 import torch as th
 
@@ -56,7 +57,7 @@ class ContextReplayBuffer(ReplayBuffer):
     ) -> None:
         # Copy to avoid modification by reference
         for i in range(len(infos)):
-            cv = infos[i]["context"][self.context_feature]
+            cv = np.around(infos[i]["context"][self.context_feature], decimals=2)
             if not cv in self.observations.keys():
                 self.observations[cv] = self.observation_base.copy()
                 self.next_observations[cv] = self.observation_base.copy()
@@ -134,23 +135,24 @@ class ContextReplayBuffer(ReplayBuffer):
 
 
 class PrioritizedContextReplayBuffer(ContextReplayBuffer):
-    def __init(self,
+    def __init__(self,
         buffer_size: int,
         observation_space: spaces.Space,
         action_space: spaces.Space,
-        context_dim: int,
-        explicit_context: bool = True,
         device: Union[th.device, str] = "cpu",
-        alpha: float = 0.5,
         n_envs: int = 1,
         optimize_memory_usage: bool = False,
-        handle_timeout_termination: bool = True,
+        handle_timeout_termination: bool = False,
+        context_dim: int = None,
+        explicit_context: bool = True,
+        context_feature = None,
+        alpha: float = 0.5
     ):
-        super(ContextReplayBuffer, self).__init__(buffer_size, observation_space, action_space, context_dim, explicit_context, device, n_envs=n_envs, optimize_memory_usage=optimize_memory_usage, handle_timeout_termination=handle_timeout_termination)
         self.alpha = alpha
         self.epsilon = 0.01
-        self.priority_base = self.reward_base.copy()
+        self.priority_base = np.zeros((buffer_size//100, n_envs), dtype=np.float32)
         self.priorities = dict()
+        super(PrioritizedContextReplayBuffer, self).__init__(buffer_size=buffer_size, observation_space=observation_space, action_space=action_space, context_feature=context_feature, context_dim=context_dim, explicit_context=explicit_context, device=device, n_envs=n_envs, optimize_memory_usage=optimize_memory_usage, handle_timeout_termination=handle_timeout_termination)
 
     def add(
             self,
@@ -163,7 +165,7 @@ class PrioritizedContextReplayBuffer(ContextReplayBuffer):
             infos: List[Dict[str, Any]],
     ) -> None:
         for i in range(len(infos)):
-            cv = infos[i]["context"][self.context_feature]
+            cv = np.around(infos[i]["context"][self.context_feature], decimals=2)
             if not cv in self.observations.keys():
                 self.priorities[cv] = self.priority_base.copy()
                 self.priorities[cv][0] = np.array(td_errors.copy()) * self.alpha + self.epsilon
@@ -173,13 +175,12 @@ class PrioritizedContextReplayBuffer(ContextReplayBuffer):
 
     def sample(self, batch_size: int, env: Optional[VecNormalize] = None) -> ReplayBufferSamples:
         contexts = self.contexts
-        context_weights = [max(contexts[k]) for k in contexts.keys()]
+        context_weights = [max(self.priorities[c])[0] for c in contexts]
         #for c in contexts:
         #    context_indices = [i for i in range(self.pos) if self.contexts[i]==c]
         #    context_priorities = [self.priorities[i] for i in context_indices]
         #    context_weights.append(max(context_priorities))
-
-        sample_context = np.random.choice(contexts, p=context_weights)
+        sample_context = random.choices(population=contexts, weights=context_weights)[0]
         #eligible_indices = [i for i in range(len(self.contexts)) if self.contexts[i] == sample_context]
         eligible_indices = np.arange(len(np.nonzero(self.observations[sample_context])))
         batch_inds = np.random.choice(eligible_indices, size=batch_size)

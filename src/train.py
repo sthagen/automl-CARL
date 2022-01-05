@@ -387,7 +387,11 @@ def main(args, unknown_args, parser):
         callbacks = [chkp_cb]
     else:
         callbacks.append(chkp_cb)
+    
+    if args.replay_buffer == "context_uniform_prio":
+        args.agent = "PrioDQN"
 
+    print(args.agent)
     try:
         agent_cls = eval(args.agent)
     except ValueError:

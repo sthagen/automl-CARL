@@ -20,8 +20,8 @@ from stable_baselines3.common.utils import should_collect_more_steps
 from stable_baselines3.common.vec_env import VecEnv
 
 class PrioOffPolicyAlgorithm(OffPolicyAlgorithm):
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
         self.old_obs = None
 
     def _store_transition(
@@ -119,7 +119,7 @@ class PrioOffPolicyAlgorithm(OffPolicyAlgorithm):
         :return:
         """
         # Switch to eval mode (this affects batch norm / dropout)
-        self.policy.set_training_mode(False)
+        #self.policy.set_training_mode(False)
 
         num_collected_steps, num_collected_episodes = 0, 0
 
@@ -145,7 +145,7 @@ class PrioOffPolicyAlgorithm(OffPolicyAlgorithm):
                 self.actor.reset_noise(env.num_envs)
 
             # Select action randomly or according to policy
-            actions, buffer_actions = self._sample_action(learning_starts, action_noise, env.num_envs)
+            actions, buffer_actions = self._sample_action(learning_starts, action_noise)
 
             # Rescale and perform action
             new_obs, rewards, dones, infos = env.step(actions)
@@ -195,10 +195,10 @@ class PrioOffPolicyAlgorithm(OffPolicyAlgorithm):
 
         callback.on_rollout_end()
 
-        return RolloutReturn(num_collected_steps * env.num_envs, num_collected_episodes, continue_training)
+        return RolloutReturn(0.0, num_collected_steps, num_collected_episodes, continue_training)
 
 #This is exactly the stable baselines code only with a different base class
-def PrioDQN(PrioOffPolicyAlgorithm):
+class PrioDQN(PrioOffPolicyAlgorithm):
     def __init__(
             self,
             policy: Union[str, Type[DQNPolicy]],
@@ -310,7 +310,7 @@ def PrioDQN(PrioOffPolicyAlgorithm):
 
     def train(self, gradient_steps: int, batch_size: int = 100) -> None:
         # Switch to train mode (this affects batch norm / dropout)
-        self.policy.set_training_mode(True)
+        #self.policy.set_training_mode(True)
         # Update learning rate according to schedule
         self._update_learning_rate(self.policy.optimizer)
 
