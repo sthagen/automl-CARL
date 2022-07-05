@@ -116,6 +116,7 @@ class CARLEnv(Wrapper):
         self.dict_observation_space = dict_observation_space
         self.cutoff = max_episode_length
         self.logger = logger
+        self.context_encoder = context_encoder
         self.add_gaussian_noise_to_context = add_gaussian_noise_to_context
         self.gaussian_noise_std_percentage = gaussian_noise_std_percentage
         self.context_encoder = context_encoder

@@ -5,6 +5,8 @@ import numpy as np
 from carl.utils.trial_logger import TrialLogger
 from carl.context.selection import AbstractSelector
 from carl.envs.dmc.carl_dmcontrol import CARLDmcEnv
+from carl.context_encoders import ContextEncoder
+from carl.envs.dmc.dmc_tasks.fish import STEP_LIMIT
 
 
 DEFAULT_CONTEXT = {
@@ -54,7 +56,7 @@ class CARLDmcFishEnv(CARLDmcEnv):
     def __init__(
         self,
         domain: str = "fish",
-        task: str = "upright_context",
+        task: str = "swim_context",
         contexts: Dict[Any, Dict[Any, Any]] = {},
         context_mask: Optional[List[str]] = [],
         hide_context: bool = True,
@@ -63,11 +65,12 @@ class CARLDmcFishEnv(CARLDmcEnv):
         logger: Optional[TrialLogger] = None,
         scale_context_features: str = "no",
         default_context: Optional[Dict] = DEFAULT_CONTEXT,
-        max_episode_length: int = 500,  # from https://github.com/openai/gym/blob/master/gym/envs/__init__.py
+        max_episode_length: int = STEP_LIMIT,
         state_context_features: Optional[List[str]] = None,
         dict_observation_space: bool = False,
         context_selector: Optional[Union[AbstractSelector, type(AbstractSelector)]] = None,
         context_selector_kwargs: Optional[Dict] = None,
+        context_encoder: Optional[ContextEncoder] = None,
     ):
         super().__init__(
             domain=domain,
@@ -85,4 +88,5 @@ class CARLDmcFishEnv(CARLDmcEnv):
             dict_observation_space=dict_observation_space,
             context_selector=context_selector,
             context_selector_kwargs=context_selector_kwargs,
+            context_encoder=context_encoder,
         )

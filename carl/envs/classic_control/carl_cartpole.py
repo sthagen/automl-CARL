@@ -7,6 +7,8 @@ from gym.envs.classic_control import CartPoleEnv
 from carl.envs.carl_env import CARLEnv
 from carl.utils.trial_logger import TrialLogger
 from carl.context.selection import AbstractSelector
+from carl.context_encoders import ContextEncoder
+
 
 DEFAULT_CONTEXT = {
     "gravity": 9.8,
@@ -77,7 +79,7 @@ class CARLCartPoleEnv(CARLEnv):
         dict_observation_space: bool = False,
         context_selector: Optional[Union[AbstractSelector, type(AbstractSelector)]] = None,
         context_selector_kwargs: Optional[Dict] = None,
-        # TODO add context encoder
+        context_encoder: Optional[ContextEncoder] = None,
     ):
         if not contexts:
             contexts = {0: DEFAULT_CONTEXT}
@@ -95,6 +97,7 @@ class CARLCartPoleEnv(CARLEnv):
             dict_observation_space=dict_observation_space,
             context_selector=context_selector,
             context_selector_kwargs=context_selector_kwargs,
+            context_encoder=context_encoder,
             context_mask=context_mask,
         )
         self.whitelist_gaussian_noise = list(
