@@ -20,6 +20,7 @@ import torch as th
 
 base_dir = os.getcwd()
 
+import pdb
 
 def get_encoder(cfg) -> ContextEncoder:
     """
@@ -37,7 +38,7 @@ def check_config_valid(cfg):
     valid = True
     if cfg.carl.hide_context and cfg.carl.state_context_features:
         valid = False
-    if not cfg.contexts.context_feature_args and cfg.carl.state_context_features is not None:
+    if not cfg.train_contexts.context_feature_args and cfg.carl.state_context_features is not None:
         valid = False
     return valid
 
@@ -45,9 +46,9 @@ def check_config_valid(cfg):
 @hydra.main("./configs", "base")
 def train(cfg: DictConfig):
     dict_cfg = OmegaConf.to_container(cfg, resolve=True, enum_to_str=True)
-    if (not check_config_valid(cfg) or check_wandb_exists(dict_cfg, unique_fields=["env", "seed", "group", "contexts.context_feature_args", "contexts.default_sample_std_percentage", "carl.state_context_features"])) and not cfg.debug:
-        print(f"Skipping run with cfg {dict_cfg}")
-        return
+    # if (not check_config_valid(cfg) or check_wandb_exists(dict_cfg, unique_fields=["env", "seed", "group", "contexts.context_feature_args", "contexts.default_sample_std_percentage", "carl.state_context_features"])) and not cfg.debug:
+    #     print(f"Skipping run with cfg {dict_cfg}")
+    #     return
     wandb.init(
         mode="offline" if cfg.debug else None,
         project="carl",
@@ -66,11 +67,15 @@ def train(cfg: DictConfig):
     set_seed_everywhere(cfg.seed)
 
     EnvCls = partial(getattr(envs, cfg.env), **cfg.carl)
-    contexts = sample_contexts(cfg.env, **cfg.contexts)
+    contexts = sample_contexts(cfg.env, **cfg.train_contexts)
+
+
     if cfg.eval_on_train_context:
         eval_contexts = contexts
     else:
-        eval_contexts = sample_contexts(cfg.env, **cfg.contexts)
+        eval_contexts = sample_contexts(cfg.env,**cfg.eval_contexts)
+    
+    
     if contexts:
         table = wandb.Table(
             columns=sorted(contexts[0].keys()),
@@ -109,9 +114,9 @@ def train(cfg: DictConfig):
 
     print(OmegaConf.to_yaml(cfg))
     print(env)
-    print(f"Observation Space: ", env.observation_space)
-    print(f"Action Space: ", env.action_space)
-    print(f"Contexts: ", contexts)
+    # print(f"Observation Space: ", env.observation_space)
+    # print(f"Action Space: ", env.action_space)
+    # print(f"Contexts: ", contexts)
 
     if cfg.algorithm == "sac":
         avg_return = sac(cfg, env, eval_env)

@@ -7,6 +7,7 @@ from scipy.stats import norm
 
 import carl.envs
 
+import pdb
 
 def get_default_context_and_bounds(
     env_name: str,
@@ -41,14 +42,14 @@ def get_default_context_and_bounds(
     context_bounds = getattr(env_module, "CONTEXT_BOUNDS")
     return context_def, context_bounds
 
-
 def sample_contexts(
     env_name: str,
     context_feature_args: List[str],
     num_contexts: int,
     default_sample_std_percentage: float = 0.05,
-    fallback_sample_std: float = 0.1,
+    fallback_sample_std: float = 0.1, 
     seed: Optional[int] = None,
+    ref_level = None,
 ) -> Dict[int, Dict[str, Any]]:
     """
     Sample contexts.
@@ -125,9 +126,10 @@ def sample_contexts(
             if f"{context_feature_name}_mean" in context_feature_args:
                 sample_mean = float(
                     context_feature_args[
-                        context_feature_args.index(f"{context_feature_name}_mean") + 1
+                        context_feature_args.indexf("{context_feature_name}_mean") + 1
                     ]
                 )
+            
             else:
                 sample_mean = env_defaults[context_feature_name]
 
@@ -146,9 +148,26 @@ def sample_contexts(
                 # the sample mean. Therefore we use a fallback sample standard deviation.
                 sample_std = fallback_sample_std  # TODO change this back to sample_std
 
-            random_variable = norm(loc=sample_mean, scale=sample_std)
+            if not ref_level:
+                # If no reference level is provided, then sample  around the mean
+                random_variable = norm(loc=sample_mean, scale=sample_std)
+            
+            else:
+                # Otherwise, sample around a shifted value of the mean to handle extrapolation
+                ref_val = ref_level * np.abs(sample_mean)
+                test_mean = (np.abs(sample_mean) +  ref_val) * np.sign(sample_mean)             # TODO Make shift along signs optional
+                
+                print('sample_mean', sample_mean)
+                print('ref_val', ref_val)
+                print('sample_std', sample_std)
+                print('test_mean', test_mean)
+                pdb.set_trace()
+                random_variable = norm(loc=test_mean, scale=sample_std)
+            
+            
             context_feature_type = env_bounds[context_feature_name][2]
             sample_dists[context_feature_name] = (random_variable, context_feature_type)
+
 
     # Sample contexts
     contexts = {}
