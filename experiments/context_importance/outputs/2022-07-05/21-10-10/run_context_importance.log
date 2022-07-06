@@ -1,5 +1,0 @@
-[2022-07-05 21:10:10,438][smac.utils.io.cmd_reader.CMDReader][INFO] - Output to smac3-output_2022-07-05_21:10:10_438397
-[2022-07-05 21:10:11,139][absl][INFO] - Unable to initialize backend 'tpu_driver': NOT_FOUND: Unable to find driver in registry given worker: 
-[2022-07-05 21:10:11,140][absl][INFO] - Unable to initialize backend 'gpu': NOT_FOUND: Could not find registered platform with name: "cuda". Available platform names are: Host Interpreter
-[2022-07-05 21:10:11,140][absl][INFO] - Unable to initialize backend 'tpu': INVALID_ARGUMENT: TpuPlatform is not available.
-[2022-07-05 21:10:11,140][absl][WARNING] - No GPU/TPU found, falling back to CPU. (Set TF_CPP_MIN_LOG_LEVEL=0 and rerun for more info.)
