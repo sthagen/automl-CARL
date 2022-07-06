@@ -1,0 +1,4 @@
+"CPU Time Used","Estimated Training Performance","Wallclock Time","Incumbent ID","Automatic Configurator (CPU) Time","Configuration..."
+0.000000, 2147483648.000000, 0.008543, 1, 0.008543, dt='False', g='False', initial_angle_max='True', initial_velocity_max='False', l='True', m='False', max_speed='True'
+66.438640, -419.136954, 66.487102, 1, 0.048462, dt='False', g='False', initial_angle_max='True', initial_velocity_max='False', l='True', m='False', max_speed='True'
+129.863883, -1333.952251, 129.947407, 2, 0.083524, dt='True', g='True', initial_angle_max='False', initial_velocity_max='True', l='False', m='True', max_speed='False'

@@ -1,0 +1,20 @@
+2022-07-05 21:31:20,837 INFO    MainThread:19243 [internal.py:wandb_internal():90] W&B internal server running at pid: 19243, started at: 2022-07-05 21:31:20.837137
+2022-07-05 21:31:20,838 DEBUG   HandlerThread:19243 [handler.py:handle_request():141] handle_request: run_start
+2022-07-05 21:31:20,838 INFO    WriterThread:19243 [datastore.py:open_for_write():75] open: /home/mohan/git/current_projects/contextual_rl/attention/CARL/experiments/context_importance/outputs/2022-07-05/21-31-20/wandb/offline-run-20220705_213120-vy42f3e0/run-vy42f3e0.wandb
+2022-07-05 21:31:20,840 DEBUG   HandlerThread:19243 [meta.py:__init__():35] meta init
+2022-07-05 21:31:20,841 DEBUG   HandlerThread:19243 [meta.py:__init__():49] meta init done
+2022-07-05 21:31:20,841 DEBUG   HandlerThread:19243 [meta.py:probe():209] probe
+2022-07-05 21:31:20,846 DEBUG   HandlerThread:19243 [meta.py:_setup_git():199] setup git
+2022-07-05 21:31:20,853 DEBUG   HandlerThread:19243 [meta.py:_setup_git():206] setup git done
+2022-07-05 21:31:20,853 DEBUG   HandlerThread:19243 [meta.py:_save_pip():53] save pip
+2022-07-05 21:31:20,853 DEBUG   HandlerThread:19243 [meta.py:_save_pip():67] save pip done
+2022-07-05 21:31:20,853 DEBUG   HandlerThread:19243 [meta.py:_save_conda():74] save conda
+2022-07-05 21:31:25,308 DEBUG   HandlerThread:19243 [meta.py:_save_conda():84] save conda done
+2022-07-05 21:31:25,308 DEBUG   HandlerThread:19243 [meta.py:probe():247] probe done
+2022-07-05 21:31:50,425 WARNING MainThread:19243 [internal.py:wandb_internal():153] Internal process interrupt: 1
+2022-07-05 21:31:54,430 WARNING MainThread:19243 [internal.py:is_dead():387] Internal process exiting, parent pid 19192 disappeared
+2022-07-05 21:31:54,430 ERROR   MainThread:19243 [internal.py:wandb_internal():149] Internal process shutdown.
+2022-07-05 21:31:54,845 INFO    SenderThread:19243 [sender.py:finish():1111] shutting down sender
+2022-07-05 21:31:55,330 INFO    WriterThread:19243 [datastore.py:close():279] close: /home/mohan/git/current_projects/contextual_rl/attention/CARL/experiments/context_importance/outputs/2022-07-05/21-31-20/wandb/offline-run-20220705_213120-vy42f3e0/run-vy42f3e0.wandb
+2022-07-05 21:31:55,335 INFO    HandlerThread:19243 [handler.py:finish():806] shutting down handler
+2022-07-05 21:31:55,335 INFO    MainThread:19243 [internal.py:handle_exit():80] Internal process exited

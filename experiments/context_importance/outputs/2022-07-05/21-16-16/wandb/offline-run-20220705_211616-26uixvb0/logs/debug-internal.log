@@ -1,0 +1,84 @@
+2022-07-05 21:16:16,756 INFO    MainThread:8690 [internal.py:wandb_internal():90] W&B internal server running at pid: 8690, started at: 2022-07-05 21:16:16.755868
+2022-07-05 21:16:16,757 DEBUG   HandlerThread:8690 [handler.py:handle_request():141] handle_request: run_start
+2022-07-05 21:16:16,757 INFO    WriterThread:8690 [datastore.py:open_for_write():75] open: /home/mohan/git/current_projects/contextual_rl/attention/CARL/experiments/context_importance/outputs/2022-07-05/21-16-16/wandb/offline-run-20220705_211616-26uixvb0/run-26uixvb0.wandb
+2022-07-05 21:16:16,759 DEBUG   HandlerThread:8690 [meta.py:__init__():35] meta init
+2022-07-05 21:16:16,759 DEBUG   HandlerThread:8690 [meta.py:__init__():49] meta init done
+2022-07-05 21:16:16,759 DEBUG   HandlerThread:8690 [meta.py:probe():209] probe
+2022-07-05 21:16:16,765 DEBUG   HandlerThread:8690 [meta.py:_setup_git():199] setup git
+2022-07-05 21:16:16,772 DEBUG   HandlerThread:8690 [meta.py:_setup_git():206] setup git done
+2022-07-05 21:16:16,772 DEBUG   HandlerThread:8690 [meta.py:_save_pip():53] save pip
+2022-07-05 21:16:16,773 DEBUG   HandlerThread:8690 [meta.py:_save_pip():67] save pip done
+2022-07-05 21:16:16,773 DEBUG   HandlerThread:8690 [meta.py:_save_conda():74] save conda
+2022-07-05 21:16:21,324 DEBUG   HandlerThread:8690 [meta.py:_save_conda():84] save conda done
+2022-07-05 21:16:21,324 DEBUG   HandlerThread:8690 [meta.py:probe():247] probe done
+2022-07-05 21:16:23,861 DEBUG   HandlerThread:8690 [handler.py:handle_request():141] handle_request: poll_exit
+2022-07-05 21:16:23,861 DEBUG   SenderThread:8690 [sender.py:send():235] send: exit
+2022-07-05 21:16:23,861 INFO    SenderThread:8690 [sender.py:send_exit():371] handling exit code: 1
+2022-07-05 21:16:23,861 INFO    SenderThread:8690 [sender.py:send_exit():373] handling runtime: 7
+2022-07-05 21:16:23,861 INFO    SenderThread:8690 [sender.py:_save_file():949] saving file wandb-summary.json with policy end
+2022-07-05 21:16:23,861 INFO    SenderThread:8690 [sender.py:send_exit():379] send defer
+2022-07-05 21:16:23,861 DEBUG   SenderThread:8690 [sender.py:send_request():249] send_request: poll_exit
+2022-07-05 21:16:23,861 DEBUG   HandlerThread:8690 [handler.py:handle_request():141] handle_request: defer
+2022-07-05 21:16:23,861 INFO    HandlerThread:8690 [handler.py:handle_request_defer():164] handle defer: 0
+2022-07-05 21:16:23,861 DEBUG   SenderThread:8690 [sender.py:send_request():249] send_request: defer
+2022-07-05 21:16:23,862 INFO    SenderThread:8690 [sender.py:send_request_defer():388] handle sender defer: 0
+2022-07-05 21:16:23,862 INFO    SenderThread:8690 [sender.py:transition_state():392] send defer: 1
+2022-07-05 21:16:23,862 DEBUG   HandlerThread:8690 [handler.py:handle_request():141] handle_request: defer
+2022-07-05 21:16:23,862 INFO    HandlerThread:8690 [handler.py:handle_request_defer():164] handle defer: 1
+2022-07-05 21:16:23,910 DEBUG   SenderThread:8690 [sender.py:send_request():249] send_request: defer
+2022-07-05 21:16:23,910 INFO    SenderThread:8690 [sender.py:send_request_defer():388] handle sender defer: 1
+2022-07-05 21:16:23,911 INFO    SenderThread:8690 [sender.py:transition_state():392] send defer: 2
+2022-07-05 21:16:23,911 DEBUG   HandlerThread:8690 [handler.py:handle_request():141] handle_request: defer
+2022-07-05 21:16:23,911 INFO    HandlerThread:8690 [handler.py:handle_request_defer():164] handle defer: 2
+2022-07-05 21:16:23,911 DEBUG   SenderThread:8690 [sender.py:send_request():249] send_request: defer
+2022-07-05 21:16:23,911 INFO    SenderThread:8690 [sender.py:send_request_defer():388] handle sender defer: 2
+2022-07-05 21:16:23,911 INFO    SenderThread:8690 [sender.py:transition_state():392] send defer: 3
+2022-07-05 21:16:23,911 DEBUG   HandlerThread:8690 [handler.py:handle_request():141] handle_request: defer
+2022-07-05 21:16:23,911 INFO    HandlerThread:8690 [handler.py:handle_request_defer():164] handle defer: 3
+2022-07-05 21:16:23,911 DEBUG   SenderThread:8690 [sender.py:send_request():249] send_request: defer
+2022-07-05 21:16:23,911 INFO    SenderThread:8690 [sender.py:send_request_defer():388] handle sender defer: 3
+2022-07-05 21:16:23,911 INFO    SenderThread:8690 [sender.py:transition_state():392] send defer: 4
+2022-07-05 21:16:23,911 DEBUG   HandlerThread:8690 [handler.py:handle_request():141] handle_request: defer
+2022-07-05 21:16:23,911 INFO    HandlerThread:8690 [handler.py:handle_request_defer():164] handle defer: 4
+2022-07-05 21:16:23,911 DEBUG   SenderThread:8690 [sender.py:send_request():249] send_request: defer
+2022-07-05 21:16:23,911 INFO    SenderThread:8690 [sender.py:send_request_defer():388] handle sender defer: 4
+2022-07-05 21:16:23,911 INFO    SenderThread:8690 [sender.py:transition_state():392] send defer: 5
+2022-07-05 21:16:23,911 DEBUG   HandlerThread:8690 [handler.py:handle_request():141] handle_request: defer
+2022-07-05 21:16:23,911 INFO    HandlerThread:8690 [handler.py:handle_request_defer():164] handle defer: 5
+2022-07-05 21:16:23,911 DEBUG   SenderThread:8690 [sender.py:send_request():249] send_request: defer
+2022-07-05 21:16:23,912 INFO    SenderThread:8690 [sender.py:send_request_defer():388] handle sender defer: 5
+2022-07-05 21:16:23,912 INFO    SenderThread:8690 [sender.py:transition_state():392] send defer: 6
+2022-07-05 21:16:23,912 DEBUG   HandlerThread:8690 [handler.py:handle_request():141] handle_request: defer
+2022-07-05 21:16:23,912 INFO    HandlerThread:8690 [handler.py:handle_request_defer():164] handle defer: 6
+2022-07-05 21:16:23,912 DEBUG   SenderThread:8690 [sender.py:send_request():249] send_request: defer
+2022-07-05 21:16:23,912 INFO    SenderThread:8690 [sender.py:send_request_defer():388] handle sender defer: 6
+2022-07-05 21:16:23,912 INFO    SenderThread:8690 [sender.py:transition_state():392] send defer: 7
+2022-07-05 21:16:23,912 DEBUG   HandlerThread:8690 [handler.py:handle_request():141] handle_request: defer
+2022-07-05 21:16:23,912 INFO    HandlerThread:8690 [handler.py:handle_request_defer():164] handle defer: 7
+2022-07-05 21:16:23,912 DEBUG   SenderThread:8690 [sender.py:send_request():249] send_request: defer
+2022-07-05 21:16:23,912 INFO    SenderThread:8690 [sender.py:send_request_defer():388] handle sender defer: 7
+2022-07-05 21:16:23,912 INFO    SenderThread:8690 [sender.py:transition_state():392] send defer: 8
+2022-07-05 21:16:23,912 DEBUG   HandlerThread:8690 [handler.py:handle_request():141] handle_request: defer
+2022-07-05 21:16:23,912 INFO    HandlerThread:8690 [handler.py:handle_request_defer():164] handle defer: 8
+2022-07-05 21:16:23,912 DEBUG   SenderThread:8690 [sender.py:send_request():249] send_request: defer
+2022-07-05 21:16:23,912 INFO    SenderThread:8690 [sender.py:send_request_defer():388] handle sender defer: 8
+2022-07-05 21:16:23,912 INFO    SenderThread:8690 [sender.py:transition_state():392] send defer: 9
+2022-07-05 21:16:23,913 DEBUG   HandlerThread:8690 [handler.py:handle_request():141] handle_request: defer
+2022-07-05 21:16:23,913 INFO    HandlerThread:8690 [handler.py:handle_request_defer():164] handle defer: 9
+2022-07-05 21:16:23,913 DEBUG   SenderThread:8690 [sender.py:send_request():249] send_request: defer
+2022-07-05 21:16:23,913 INFO    SenderThread:8690 [sender.py:send_request_defer():388] handle sender defer: 9
+2022-07-05 21:16:23,913 INFO    SenderThread:8690 [sender.py:transition_state():392] send defer: 10
+2022-07-05 21:16:23,913 DEBUG   SenderThread:8690 [sender.py:send():235] send: final
+2022-07-05 21:16:23,913 DEBUG   HandlerThread:8690 [handler.py:handle_request():141] handle_request: defer
+2022-07-05 21:16:23,913 INFO    HandlerThread:8690 [handler.py:handle_request_defer():164] handle defer: 10
+2022-07-05 21:16:23,913 DEBUG   SenderThread:8690 [sender.py:send_request():249] send_request: defer
+2022-07-05 21:16:23,913 INFO    SenderThread:8690 [sender.py:send_request_defer():388] handle sender defer: 10
+2022-07-05 21:16:23,962 DEBUG   HandlerThread:8690 [handler.py:handle_request():141] handle_request: poll_exit
+2022-07-05 21:16:23,962 DEBUG   SenderThread:8690 [sender.py:send_request():249] send_request: poll_exit
+2022-07-05 21:16:24,063 DEBUG   HandlerThread:8690 [handler.py:handle_request():141] handle_request: sampled_history
+2022-07-05 21:16:24,064 DEBUG   HandlerThread:8690 [handler.py:handle_request():141] handle_request: get_summary
+2022-07-05 21:16:24,064 DEBUG   HandlerThread:8690 [handler.py:handle_request():141] handle_request: shutdown
+2022-07-05 21:16:24,064 INFO    HandlerThread:8690 [handler.py:finish():806] shutting down handler
+2022-07-05 21:16:24,913 INFO    WriterThread:8690 [datastore.py:close():279] close: /home/mohan/git/current_projects/contextual_rl/attention/CARL/experiments/context_importance/outputs/2022-07-05/21-16-16/wandb/offline-run-20220705_211616-26uixvb0/run-26uixvb0.wandb
+2022-07-05 21:16:24,963 INFO    SenderThread:8690 [sender.py:finish():1111] shutting down sender
+2022-07-05 21:16:24,963 INFO    MainThread:8690 [internal.py:handle_exit():80] Internal process exited

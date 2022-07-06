@@ -1,0 +1,9 @@
+[2022-07-05 21:15:24,085][smac.utils.io.cmd_reader.CMDReader][INFO] - Output to smac3-output_2022-07-05_21:15:24_085617
+[2022-07-05 21:15:29,189][absl][INFO] - Unable to initialize backend 'tpu_driver': NOT_FOUND: Unable to find driver in registry given worker: 
+[2022-07-05 21:15:29,189][absl][INFO] - Unable to initialize backend 'gpu': NOT_FOUND: Could not find registered platform with name: "cuda". Available platform names are: Interpreter Host
+[2022-07-05 21:15:29,190][absl][INFO] - Unable to initialize backend 'tpu': INVALID_ARGUMENT: TpuPlatform is not available.
+[2022-07-05 21:15:29,190][absl][WARNING] - No GPU/TPU found, falling back to CPU. (Set TF_CPP_MIN_LOG_LEVEL=0 and rerun for more info.)
+[2022-07-05 21:15:31,232][TrainMonitor][INFO] - ep: 1,	T: 201,	G: -1.56e+03,	avg_r: -7.78,	avg_G: -1.56e+03,	t: 200,	dt: 2.691ms
+[2022-07-05 21:15:31,510][TrainMonitor][INFO] - ep: 2,	T: 402,	G: -879,	avg_r: -4.39,	avg_G: -1.22e+03,	t: 200,	dt: 1.390ms
+[2022-07-05 21:15:39,976][TrainMonitor][INFO] - ep: 3,	T: 603,	G: -986,	avg_r: -4.93,	avg_G: -1.14e+03,	t: 200,	dt: 42.332ms,	SoftClippedDoubleQLearning/EntropyRegularizer/entropy: 0.886,	SoftClippedDoubleQLearning/loss: 345,	SoftPG/EntropyRegularizer/entropy: 1.22,	SoftPG/loss: -0.237
+[2022-07-05 21:15:40,899][TrainMonitor][INFO] - ep: 4,	T: 804,	G: -1.25e+03,	avg_r: -6.23,	avg_G: -1.17e+03,	t: 200,	dt: 4.613ms,	SoftClippedDoubleQLearning/EntropyRegularizer/entropy: 1.62,	SoftClippedDoubleQLearning/loss: 80.1,	SoftPG/EntropyRegularizer/entropy: 2.25,	SoftPG/loss: -0.268

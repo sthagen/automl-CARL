@@ -1,0 +1,3 @@
+"CPU Time Used","Estimated Training Performance","Wallclock Time","Incumbent ID","Automatic Configurator (CPU) Time","Configuration..."
+0.000000, 2147483648.000000, 0.009068, 1, 0.009068, dt='False', g='False', l='True', m='False', max_speed='True'
+65.563838, -1173.201357, 65.596600, 1, 0.032762, dt='False', g='False', l='True', m='False', max_speed='True'

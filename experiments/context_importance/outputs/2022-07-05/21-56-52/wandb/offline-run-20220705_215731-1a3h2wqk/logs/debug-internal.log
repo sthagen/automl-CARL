@@ -1,0 +1,16 @@
+2022-07-05 21:57:32,053 INFO    MainThread:10344 [internal.py:wandb_internal():90] W&B internal server running at pid: 10344, started at: 2022-07-05 21:57:32.053427
+2022-07-05 21:57:32,054 DEBUG   HandlerThread:10344 [handler.py:handle_request():141] handle_request: run_start
+2022-07-05 21:57:32,055 INFO    WriterThread:10344 [datastore.py:open_for_write():75] open: /home/mohan/git/current_projects/contextual_rl/attention/CARL/experiments/context_importance/outputs/2022-07-05/21-56-52/wandb/offline-run-20220705_215731-1a3h2wqk/run-1a3h2wqk.wandb
+2022-07-05 21:57:32,056 DEBUG   HandlerThread:10344 [meta.py:__init__():35] meta init
+2022-07-05 21:57:32,056 DEBUG   HandlerThread:10344 [meta.py:__init__():49] meta init done
+2022-07-05 21:57:32,056 DEBUG   HandlerThread:10344 [meta.py:probe():209] probe
+2022-07-05 21:57:32,062 DEBUG   HandlerThread:10344 [meta.py:_setup_git():199] setup git
+2022-07-05 21:57:32,068 DEBUG   HandlerThread:10344 [meta.py:_setup_git():206] setup git done
+2022-07-05 21:57:32,068 DEBUG   HandlerThread:10344 [meta.py:_save_pip():53] save pip
+2022-07-05 21:57:32,069 DEBUG   HandlerThread:10344 [meta.py:_save_pip():67] save pip done
+2022-07-05 21:57:32,069 DEBUG   HandlerThread:10344 [meta.py:_save_conda():74] save conda
+2022-07-05 21:57:36,459 DEBUG   HandlerThread:10344 [meta.py:_save_conda():84] save conda done
+2022-07-05 21:57:36,459 DEBUG   HandlerThread:10344 [meta.py:probe():247] probe done
+2022-07-05 21:57:38,555 DEBUG   HandlerThread:10344 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-05 21:57:38,830 DEBUG   HandlerThread:10344 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-05 21:57:41,002 WARNING MainThread:10344 [internal.py:wandb_internal():153] Internal process interrupt: 1

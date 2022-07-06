@@ -1,0 +1,16 @@
+[2022-07-05 21:01:04,820][smac.utils.io.cmd_reader.CMDReader][INFO] - Output to smac3-output_2022-07-05_21:01:04_820153
+[2022-07-05 21:01:07,441][smac.facade.smac_bb_facade.SMAC4BB][INFO] - Optimizing a deterministic scenario for quality without a tuner timeout - will make SMAC deterministic and only evaluate one configuration per iteration!
+[2022-07-05 21:01:07,446][smac.initial_design.sobol_design.SobolDesign][INFO] - Running initial design for 2 configurations
+[2022-07-05 21:01:07,447][smac.facade.smac_bb_facade.SMAC4BB][INFO] - <class 'smac.facade.smac_bb_facade.SMAC4BB'>
+[2022-07-05 21:01:07,448][smac.optimizer.smbo.SMBO][INFO] - Running initial design
+[2022-07-05 21:01:07,461][smac.intensification.intensification.Intensifier][INFO] - First run, no incumbent provided; challenger is assumed to be the incumbent
+[2022-07-05 21:01:07,493][smac.stats.stats.Stats][INFO] - ##########################################################
+[2022-07-05 21:01:07,494][smac.stats.stats.Stats][INFO] - Statistics:
+[2022-07-05 21:01:07,494][smac.stats.stats.Stats][INFO] - #Incumbent changed: -1
+[2022-07-05 21:01:07,494][smac.stats.stats.Stats][INFO] - #Submitted target algorithm runs: 1 / 250.0
+[2022-07-05 21:01:07,494][smac.stats.stats.Stats][INFO] - #Finished target algorithm runs: 1 / 250.0
+[2022-07-05 21:01:07,494][smac.stats.stats.Stats][INFO] - #Configurations: 1
+[2022-07-05 21:01:07,494][smac.stats.stats.Stats][INFO] - Used wallclock time: 0.05 / inf sec 
+[2022-07-05 21:01:07,494][smac.stats.stats.Stats][INFO] - Used target algorithm runtime: 0.03 / inf sec
+[2022-07-05 21:01:07,494][smac.stats.stats.Stats][INFO] - ##########################################################
+[2022-07-05 21:01:07,494][smac.facade.smac_bb_facade.SMAC4BB][INFO] - Final Incumbent: None

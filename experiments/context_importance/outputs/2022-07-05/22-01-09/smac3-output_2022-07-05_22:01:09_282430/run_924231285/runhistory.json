@@ -1,0 +1,91 @@
+{
+  "data": [
+    [
+      [
+        1,
+        null,
+        0,
+        0.0
+      ],
+      [
+        -419.13695436313475,
+        66.43863987922668,
+        {
+          "__enum__": "StatusType.SUCCESS"
+        },
+        1657051269.3083174,
+        1657051335.7714653,
+        {}
+      ]
+    ],
+    [
+      [
+        2,
+        null,
+        0,
+        0.0
+      ],
+      [
+        -1333.9522509335707,
+        63.425243616104126,
+        {
+          "__enum__": "StatusType.SUCCESS"
+        },
+        1657051335.7728481,
+        1657051399.2316358,
+        {}
+      ]
+    ],
+    [
+      [
+        3,
+        null,
+        0,
+        0.0
+      ],
+      [
+        2147483647.0,
+        0.0,
+        {
+          "__enum__": "StatusType.RUNNING"
+        },
+        0.0,
+        0.0,
+        null
+      ]
+    ]
+  ],
+  "config_origins": {
+    "1": "Sobol",
+    "2": "Sobol"
+  },
+  "configs": {
+    "1": {
+      "dt": false,
+      "g": false,
+      "initial_angle_max": true,
+      "initial_velocity_max": false,
+      "l": true,
+      "m": false,
+      "max_speed": true
+    },
+    "2": {
+      "dt": true,
+      "g": true,
+      "initial_angle_max": false,
+      "initial_velocity_max": true,
+      "l": false,
+      "m": true,
+      "max_speed": false
+    },
+    "3": {
+      "dt": false,
+      "g": false,
+      "initial_angle_max": false,
+      "initial_velocity_max": false,
+      "l": false,
+      "m": false,
+      "max_speed": true
+    }
+  }
+}

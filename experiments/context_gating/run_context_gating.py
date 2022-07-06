@@ -43,6 +43,7 @@ def check_config_valid(cfg):
     return valid
 
 
+
 @hydra.main("./configs", "base")
 def train(cfg: DictConfig):
     dict_cfg = OmegaConf.to_container(cfg, resolve=True, enum_to_str=True)

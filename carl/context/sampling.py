@@ -157,11 +157,11 @@ def sample_contexts(
                 ref_val = ref_level * np.abs(sample_mean)
                 test_mean = (np.abs(sample_mean) +  ref_val) * np.sign(sample_mean)             # TODO Make shift along signs optional
                 
-                print('sample_mean', sample_mean)
-                print('ref_val', ref_val)
-                print('sample_std', sample_std)
-                print('test_mean', test_mean)
-                pdb.set_trace()
+                # print('sample_mean', sample_mean)
+                # print('ref_val', ref_val)
+                # print('sample_std', sample_std)
+                # print('test_mean', test_mean)
+                # pdb.set_trace()
                 random_variable = norm(loc=test_mean, scale=sample_std)
             
             

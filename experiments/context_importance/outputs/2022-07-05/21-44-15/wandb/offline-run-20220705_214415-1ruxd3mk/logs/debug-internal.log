@@ -1,0 +1,18 @@
+2022-07-05 21:44:16,224 INFO    MainThread:30778 [internal.py:wandb_internal():90] W&B internal server running at pid: 30778, started at: 2022-07-05 21:44:16.224621
+2022-07-05 21:44:16,226 DEBUG   HandlerThread:30778 [handler.py:handle_request():141] handle_request: run_start
+2022-07-05 21:44:16,226 INFO    WriterThread:30778 [datastore.py:open_for_write():75] open: /home/mohan/git/current_projects/contextual_rl/attention/CARL/experiments/context_importance/outputs/2022-07-05/21-44-15/wandb/offline-run-20220705_214415-1ruxd3mk/run-1ruxd3mk.wandb
+2022-07-05 21:44:16,228 DEBUG   HandlerThread:30778 [meta.py:__init__():35] meta init
+2022-07-05 21:44:16,228 DEBUG   HandlerThread:30778 [meta.py:__init__():49] meta init done
+2022-07-05 21:44:16,228 DEBUG   HandlerThread:30778 [meta.py:probe():209] probe
+2022-07-05 21:44:16,233 DEBUG   HandlerThread:30778 [meta.py:_setup_git():199] setup git
+2022-07-05 21:44:16,240 DEBUG   HandlerThread:30778 [meta.py:_setup_git():206] setup git done
+2022-07-05 21:44:16,240 DEBUG   HandlerThread:30778 [meta.py:_save_pip():53] save pip
+2022-07-05 21:44:16,241 DEBUG   HandlerThread:30778 [meta.py:_save_pip():67] save pip done
+2022-07-05 21:44:16,241 DEBUG   HandlerThread:30778 [meta.py:_save_conda():74] save conda
+2022-07-05 21:44:20,724 DEBUG   HandlerThread:30778 [meta.py:_save_conda():84] save conda done
+2022-07-05 21:44:20,724 DEBUG   HandlerThread:30778 [meta.py:probe():247] probe done
+2022-07-05 21:44:22,600 DEBUG   HandlerThread:30778 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-05 21:44:22,871 DEBUG   HandlerThread:30778 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-05 21:44:31,198 DEBUG   HandlerThread:30778 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-05 21:44:32,076 DEBUG   HandlerThread:30778 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-05 21:44:32,986 DEBUG   HandlerThread:30778 [handler.py:handle_request():141] handle_request: partial_history

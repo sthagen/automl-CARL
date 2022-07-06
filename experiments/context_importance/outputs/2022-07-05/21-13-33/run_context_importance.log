@@ -1,0 +1,18 @@
+[2022-07-05 21:13:34,000][smac.utils.io.cmd_reader.CMDReader][INFO] - Output to smac3-output_2022-07-05_21:13:33_999725
+[2022-07-05 21:13:42,400][absl][INFO] - Unable to initialize backend 'tpu_driver': NOT_FOUND: Unable to find driver in registry given worker: 
+[2022-07-05 21:13:42,401][absl][INFO] - Unable to initialize backend 'gpu': NOT_FOUND: Could not find registered platform with name: "cuda". Available platform names are: Host Interpreter
+[2022-07-05 21:13:42,401][absl][INFO] - Unable to initialize backend 'tpu': INVALID_ARGUMENT: TpuPlatform is not available.
+[2022-07-05 21:13:42,401][absl][WARNING] - No GPU/TPU found, falling back to CPU. (Set TF_CPP_MIN_LOG_LEVEL=0 and rerun for more info.)
+[2022-07-05 21:13:44,429][TrainMonitor][INFO] - ep: 1,	T: 201,	G: -1.16e+03,	avg_r: -5.8,	avg_G: -1.16e+03,	t: 200,	dt: 2.611ms
+[2022-07-05 21:13:44,715][TrainMonitor][INFO] - ep: 2,	T: 402,	G: -1.81e+03,	avg_r: -9.03,	avg_G: -1.48e+03,	t: 200,	dt: 1.428ms
+[2022-07-05 21:13:44,985][TrainMonitor][INFO] - ep: 3,	T: 603,	G: -1.48e+03,	avg_r: -7.39,	avg_G: -1.48e+03,	t: 200,	dt: 1.349ms
+[2022-07-05 21:13:45,263][TrainMonitor][INFO] - ep: 4,	T: 804,	G: -886,	avg_r: -4.43,	avg_G: -1.33e+03,	t: 200,	dt: 1.389ms
+[2022-07-05 21:13:45,534][TrainMonitor][INFO] - ep: 5,	T: 1,005,	G: -895,	avg_r: -4.48,	avg_G: -1.25e+03,	t: 200,	dt: 1.353ms
+[2022-07-05 21:13:45,806][TrainMonitor][INFO] - ep: 6,	T: 1,206,	G: -1.73e+03,	avg_r: -8.63,	avg_G: -1.33e+03,	t: 200,	dt: 1.361ms
+[2022-07-05 21:13:46,073][TrainMonitor][INFO] - ep: 7,	T: 1,407,	G: -1.74e+03,	avg_r: -8.71,	avg_G: -1.38e+03,	t: 200,	dt: 1.336ms
+[2022-07-05 21:13:46,352][TrainMonitor][INFO] - ep: 8,	T: 1,608,	G: -1.6e+03,	avg_r: -7.99,	avg_G: -1.41e+03,	t: 200,	dt: 1.392ms
+[2022-07-05 21:13:46,632][TrainMonitor][INFO] - ep: 9,	T: 1,809,	G: -969,	avg_r: -4.84,	avg_G: -1.36e+03,	t: 200,	dt: 1.400ms
+[2022-07-05 21:13:46,904][TrainMonitor][INFO] - ep: 10,	T: 2,010,	G: -839,	avg_r: -4.2,	avg_G: -1.31e+03,	t: 200,	dt: 1.358ms
+[2022-07-05 21:13:47,174][TrainMonitor][INFO] - ep: 11,	T: 2,211,	G: -1.14e+03,	avg_r: -5.68,	avg_G: -1.29e+03,	t: 200,	dt: 1.351ms
+[2022-07-05 21:13:47,445][TrainMonitor][INFO] - ep: 12,	T: 2,412,	G: -970,	avg_r: -4.85,	avg_G: -1.26e+03,	t: 200,	dt: 1.355ms
+[2022-07-05 21:13:47,714][TrainMonitor][INFO] - ep: 13,	T: 2,613,	G: -865,	avg_r: -4.32,	avg_G: -1.22e+03,	t: 200,	dt: 1.343ms

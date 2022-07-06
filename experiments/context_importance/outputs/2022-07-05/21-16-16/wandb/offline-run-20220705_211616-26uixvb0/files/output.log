@@ -1,0 +1,18 @@
+
+[1m[]
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/home/mohan/git/current_projects/contextual_rl/attention/CARL/experiments/context_importance/run_context_importance.py", line 194, in main
+    performance_default = tae_runner(context_default, file_id="default")
+  File "/home/mohan/git/current_projects/contextual_rl/attention/CARL/experiments/context_importance/run_context_importance.py", line 133, in eval_agent
+    env = EnvCls(contexts=train_contexts, context_encoder=None)
+  File "/home/mohan/git/current_projects/contextual_rl/attention/CARL/carl/envs/classic_control/carl_pendulum.py", line 93, in __init__
+    super().__init__(
+  File "/home/mohan/git/current_projects/contextual_rl/attention/CARL/carl/envs/carl_env.py", line 217, in __init__
+    self.build_observation_space()
+  File "/home/mohan/git/current_projects/contextual_rl/attention/CARL/carl/envs/carl_env.py", line 491, in build_observation_space
+    context_lower_bounds, context_upper_bounds = get_context_bounds(
+  File "/home/mohan/git/current_projects/contextual_rl/attention/CARL/carl/context/utils.py", line 31, in get_context_bounds
+    l, u, _ = context_bounds[context_key]
+TypeError: 'NoneType' object is not subscriptable
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.

@@ -1,0 +1,13 @@
+2022-07-06 00:19:50,502 INFO    MainThread:1237 [internal.py:wandb_internal():90] W&B internal server running at pid: 1237, started at: 2022-07-06 00:19:50.501925
+2022-07-06 00:19:50,503 DEBUG   HandlerThread:1237 [handler.py:handle_request():141] handle_request: run_start
+2022-07-06 00:19:50,503 INFO    WriterThread:1237 [datastore.py:open_for_write():75] open: /home/mohan/git/current_projects/contextual_rl/attention/CARL/experiments/context_importance/outputs/2022-07-05/22-06-44/wandb/offline-run-20220706_001950-cnnoui3p/run-cnnoui3p.wandb
+2022-07-06 00:19:50,505 DEBUG   HandlerThread:1237 [meta.py:__init__():35] meta init
+2022-07-06 00:19:50,505 DEBUG   HandlerThread:1237 [meta.py:__init__():49] meta init done
+2022-07-06 00:19:50,505 DEBUG   HandlerThread:1237 [meta.py:probe():209] probe
+2022-07-06 00:19:50,511 DEBUG   HandlerThread:1237 [meta.py:_setup_git():199] setup git
+2022-07-06 00:19:50,517 DEBUG   HandlerThread:1237 [meta.py:_setup_git():206] setup git done
+2022-07-06 00:19:50,517 DEBUG   HandlerThread:1237 [meta.py:_save_pip():53] save pip
+2022-07-06 00:19:50,518 DEBUG   HandlerThread:1237 [meta.py:_save_pip():67] save pip done
+2022-07-06 00:19:50,518 DEBUG   HandlerThread:1237 [meta.py:_save_conda():74] save conda
+2022-07-06 00:19:54,847 DEBUG   HandlerThread:1237 [meta.py:_save_conda():84] save conda done
+2022-07-06 00:19:54,847 DEBUG   HandlerThread:1237 [meta.py:probe():247] probe done

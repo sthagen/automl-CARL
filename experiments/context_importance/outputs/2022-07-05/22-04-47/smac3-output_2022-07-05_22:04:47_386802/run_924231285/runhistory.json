@@ -1,0 +1,36 @@
+{
+  "data": [
+    [
+      [
+        1,
+        null,
+        0,
+        0.0
+      ],
+      [
+        2147483647.0,
+        79.84969139099121,
+        {
+          "__enum__": "StatusType.CRASHED"
+        },
+        1657051487.3988547,
+        1657051567.441575,
+        {}
+      ]
+    ]
+  ],
+  "config_origins": {
+    "1": "Sobol"
+  },
+  "configs": {
+    "1": {
+      "dt": false,
+      "g": false,
+      "initial_angle_max": true,
+      "initial_velocity_max": false,
+      "l": true,
+      "m": false,
+      "max_speed": true
+    }
+  }
+}

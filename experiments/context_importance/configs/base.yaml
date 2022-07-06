@@ -2,62 +2,59 @@ defaults:
   - slurm
   - _self_
 
-encoder:
-  weights: null
-  model: ContextAE
-  
-
 carl:
-  hide_context: false
+  hide_context: False
   dict_observation_space: True
   scale_context_features: "no" # by_mean, by_default
-  state_context_features: null
-  add_gaussian_noise_to_context: false
+  state_context_features: 'changing_context_features'
+  add_gaussian_noise_to_context: False
   gaussian_noise_std_percentage: 0.15
 
-algorithm: sac
-debug: false
+debug: True
 seed: 0
 group: null
 
+algorithm: sac
 env: CARLPendulumEnv
-max_num_frames: 500000
+max_num_frames: 10000
 n_step: 5
 gamma: 0.9
 alpha: 0.2
 batch_size: 128
 learning_rate: 0.001
 q_targ_tau: 0.001
-warmup_num_frames: 5000
-pi_warmup_num_frames: 7500
+warmup_num_frames: 1000
+pi_warmup_num_frames: 1000
 pi_update_freq: 4
 
 
 replay_capacity: 100000
 render_freq: 10000
 eval_freq: 10000
-eval_episodes: ${train_contexts.num_contexts}
-eval_on_train_context: False
+eval_episodes: ${eval_contexts.num_contexts}
 
-zero_context: false # set context to zero
-state_context: false # set context to state feature subset
-pi_context: true
-q_context: true
+zero_context: False     # set context to zero
+state_context: False    # set context to state feature subset
+pi_context: True
+q_context: True
 context_state_indices: null
 
 context_branch:
   width: 32
 
 train_contexts:
-  context_feature_args: [g]
-  num_contexts: 10
+  num_contexts: 50
   default_sample_std_percentage: 0.2
   fallback_sample_std: 0.1
 
 eval_contexts:
-  context_feature_args: [g]
+  # context_feature_args: [g,l,m,dt,max_speed]
   num_contexts: 10
   default_sample_std_percentage: 0.05
   fallback_sample_std: 0.1
   ref_level: 0.2
 
+network:
+  width: 32
+
+budget: 250

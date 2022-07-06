@@ -1,0 +1,7 @@
+dt categorical {False, True} [False]
+g categorical {False, True} [False]
+initial_angle_max categorical {False, True} [False]
+initial_velocity_max categorical {False, True} [False]
+l categorical {False, True} [False]
+m categorical {False, True} [False]
+max_speed categorical {False, True} [False]

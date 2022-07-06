@@ -1,0 +1,31 @@
+2022-07-06 19:05:37,132 INFO    MainThread:3530 [internal.py:wandb_internal():90] W&B internal server running at pid: 3530, started at: 2022-07-06 19:05:37.131855
+2022-07-06 19:05:37,133 DEBUG   HandlerThread:3530 [handler.py:handle_request():141] handle_request: run_start
+2022-07-06 19:05:37,133 INFO    WriterThread:3530 [datastore.py:open_for_write():75] open: /home/mohan/git/current_projects/contextual_rl/attention/CARL/experiments/context_importance/outputs/2022-07-06/19-04-02/wandb/offline-run-20220706_190536-36c1ta24/run-36c1ta24.wandb
+2022-07-06 19:05:37,138 DEBUG   HandlerThread:3530 [meta.py:__init__():35] meta init
+2022-07-06 19:05:37,138 DEBUG   HandlerThread:3530 [meta.py:__init__():49] meta init done
+2022-07-06 19:05:37,138 DEBUG   HandlerThread:3530 [meta.py:probe():209] probe
+2022-07-06 19:05:37,145 DEBUG   HandlerThread:3530 [meta.py:_setup_git():199] setup git
+2022-07-06 19:05:37,163 DEBUG   HandlerThread:3530 [meta.py:_setup_git():206] setup git done
+2022-07-06 19:05:37,163 DEBUG   HandlerThread:3530 [meta.py:_save_pip():53] save pip
+2022-07-06 19:05:37,164 DEBUG   HandlerThread:3530 [meta.py:_save_pip():67] save pip done
+2022-07-06 19:05:37,164 DEBUG   HandlerThread:3530 [meta.py:_save_conda():74] save conda
+2022-07-06 19:05:41,951 DEBUG   HandlerThread:3530 [meta.py:_save_conda():84] save conda done
+2022-07-06 19:05:41,951 DEBUG   HandlerThread:3530 [meta.py:probe():247] probe done
+2022-07-06 19:05:43,440 DEBUG   HandlerThread:3530 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-06 19:05:43,706 DEBUG   HandlerThread:3530 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-06 19:05:43,966 DEBUG   HandlerThread:3530 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-06 19:05:44,231 DEBUG   HandlerThread:3530 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-06 19:05:47,321 DEBUG   HandlerThread:3530 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-06 19:05:53,512 DEBUG   HandlerThread:3530 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-06 19:05:54,489 DEBUG   HandlerThread:3530 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-06 19:05:55,915 DEBUG   HandlerThread:3530 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-06 19:05:56,951 DEBUG   HandlerThread:3530 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-06 19:05:58,201 DEBUG   HandlerThread:3530 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-06 19:05:59,142 DEBUG   HandlerThread:3530 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-06 19:06:00,065 DEBUG   HandlerThread:3530 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-06 19:06:01,083 DEBUG   HandlerThread:3530 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-06 19:06:02,127 DEBUG   HandlerThread:3530 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-06 19:06:03,106 DEBUG   HandlerThread:3530 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-06 19:06:04,099 DEBUG   HandlerThread:3530 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-06 19:06:05,055 DEBUG   HandlerThread:3530 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-06 19:06:05,305 WARNING MainThread:3530 [internal.py:wandb_internal():153] Internal process interrupt: 1
