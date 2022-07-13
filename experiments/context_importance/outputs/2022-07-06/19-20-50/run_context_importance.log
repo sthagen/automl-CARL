@@ -1,0 +1,88 @@
+[2022-07-06 19:20:50,513][smac.utils.io.cmd_reader.CMDReader][INFO] - Output to smac3-output_2022-07-06_19:20:50_512586
+[2022-07-06 19:20:50,513][smac.facade.smac_bb_facade.SMAC4BB][INFO] - Optimizing a deterministic scenario for quality without a tuner timeout - will make SMAC deterministic and only evaluate one configuration per iteration!
+[2022-07-06 19:20:50,514][smac.initial_design.sobol_design.SobolDesign][INFO] - Running initial design for 2 configurations
+[2022-07-06 19:20:50,514][smac.facade.smac_bb_facade.SMAC4BB][INFO] - <class 'smac.facade.smac_bb_facade.SMAC4BB'>
+[2022-07-06 19:20:50,515][smac.optimizer.smbo.SMBO][INFO] - Running initial design
+[2022-07-06 19:20:50,523][smac.intensification.intensification.Intensifier][INFO] - First run, no incumbent provided; challenger is assumed to be the incumbent
+[2022-07-06 19:20:55,461][absl][INFO] - Unable to initialize backend 'tpu_driver': NOT_FOUND: Unable to find driver in registry given worker: 
+[2022-07-06 19:20:55,462][absl][INFO] - Unable to initialize backend 'gpu': NOT_FOUND: Could not find registered platform with name: "cuda". Available platform names are: Host Interpreter
+[2022-07-06 19:20:55,462][absl][INFO] - Unable to initialize backend 'tpu': INVALID_ARGUMENT: TpuPlatform is not available.
+[2022-07-06 19:20:55,462][absl][WARNING] - No GPU/TPU found, falling back to CPU. (Set TF_CPP_MIN_LOG_LEVEL=0 and rerun for more info.)
+[2022-07-06 19:20:58,489][TrainMonitor][INFO] - ep: 1,	T: 1,000,	G: -17.2,	avg_r: -0.0172,	avg_G: -17.2,	t: 999,	dt: 1.554ms
+[2022-07-06 19:21:10,669][TrainMonitor][INFO] - ep: 2,	T: 2,000,	G: -75.8,	avg_r: -0.0759,	avg_G: -46.5,	t: 999,	dt: 12.192ms,	SoftClippedDoubleQLearning/EntropyRegularizer/entropy: 2.42,	SoftClippedDoubleQLearning/loss: 0.00487,	SoftPG/EntropyRegularizer/entropy: 3.36,	SoftPG/loss: -0.542
+[2022-07-06 19:21:15,401][TrainMonitor][INFO] - ep: 3,	T: 3,000,	G: -93.9,	avg_r: -0.094,	avg_G: -62.3,	t: 999,	dt: 4.737ms,	SoftClippedDoubleQLearning/EntropyRegularizer/entropy: 2.72,	SoftClippedDoubleQLearning/loss: 0.00467,	SoftPG/EntropyRegularizer/entropy: 3.78,	SoftPG/loss: -0.448
+[2022-07-06 19:21:20,436][TrainMonitor][INFO] - ep: 4,	T: 4,000,	G: -94.6,	avg_r: -0.0946,	avg_G: -70.4,	t: 999,	dt: 5.040ms,	SoftClippedDoubleQLearning/EntropyRegularizer/entropy: 2.93,	SoftClippedDoubleQLearning/loss: 0.00459,	SoftPG/EntropyRegularizer/entropy: 4.06,	SoftPG/loss: -0.34
+[2022-07-06 19:21:25,259][TrainMonitor][INFO] - ep: 5,	T: 5,000,	G: -95.1,	avg_r: -0.0952,	avg_G: -75.3,	t: 999,	dt: 4.827ms,	SoftClippedDoubleQLearning/EntropyRegularizer/entropy: 3.04,	SoftClippedDoubleQLearning/loss: 0.00434,	SoftPG/EntropyRegularizer/entropy: 4.22,	SoftPG/loss: -0.278
+[2022-07-06 19:21:30,078][TrainMonitor][INFO] - ep: 6,	T: 6,000,	G: -96.3,	avg_r: -0.0964,	avg_G: -78.8,	t: 999,	dt: 4.824ms,	SoftClippedDoubleQLearning/EntropyRegularizer/entropy: 3.09,	SoftClippedDoubleQLearning/loss: 0.00412,	SoftPG/EntropyRegularizer/entropy: 4.29,	SoftPG/loss: -0.223
+[2022-07-06 19:21:32,808][TrainMonitor][INFO] - ep: 7,	T: 6,547,	G: 47.2,	avg_r: 0.0864,	avg_G: -60.8,	t: 546,	dt: 5.000ms,	SoftClippedDoubleQLearning/EntropyRegularizer/entropy: 3.1,	SoftClippedDoubleQLearning/loss: 0.00417,	SoftPG/EntropyRegularizer/entropy: 4.3,	SoftPG/loss: -0.188
+[2022-07-06 19:21:37,561][TrainMonitor][INFO] - ep: 8,	T: 7,526,	G: 4.45,	avg_r: 0.00455,	avg_G: -52.7,	t: 978,	dt: 4.860ms,	SoftClippedDoubleQLearning/EntropyRegularizer/entropy: 3.35,	SoftClippedDoubleQLearning/loss: 2.52,	SoftPG/EntropyRegularizer/entropy: 4.64,	SoftPG/loss: -0.295
+[2022-07-06 19:21:39,790][TrainMonitor][INFO] - ep: 9,	T: 7,988,	G: 54.2,	avg_r: 0.118,	avg_G: -40.8,	t: 461,	dt: 4.833ms,	SoftClippedDoubleQLearning/EntropyRegularizer/entropy: 3.99,	SoftClippedDoubleQLearning/loss: 1.32e+14,	SoftPG/EntropyRegularizer/entropy: 5.53,	SoftPG/loss: 1.91e+05
+[2022-07-06 19:21:44,695][TrainMonitor][INFO] - ep: 10,	T: 8,988,	G: -99.9,	avg_r: -0.1,	avg_G: -46.7,	t: 999,	dt: 4.910ms,	SoftClippedDoubleQLearning/EntropyRegularizer/entropy: -2.58,	SoftClippedDoubleQLearning/loss: 102,	SoftPG/EntropyRegularizer/entropy: -3.59,	SoftPG/loss: -122
+[2022-07-06 19:21:49,577][TrainMonitor][INFO] - ep: 11,	T: 9,988,	G: -99.9,	avg_r: -0.1,	avg_G: -52,	t: 999,	dt: 4.887ms,	SoftClippedDoubleQLearning/EntropyRegularizer/entropy: -2.9,	SoftClippedDoubleQLearning/loss: 1.59e+05,	SoftPG/EntropyRegularizer/entropy: -4.02,	SoftPG/loss: -6.78e+03
+[2022-07-06 19:22:11,549][smac.intensification.intensification.Intensifier][INFO] - First run, no incumbent provided; challenger is assumed to be the incumbent
+[2022-07-06 19:22:11,549][smac.intensification.intensification.Intensifier][INFO] - Updated estimated cost of incumbent on 1 runs: -41.6800
+[2022-07-06 19:22:16,524][absl][INFO] - Unable to initialize backend 'tpu_driver': NOT_FOUND: Unable to find driver in registry given worker: 
+[2022-07-06 19:22:16,524][absl][INFO] - Unable to initialize backend 'gpu': NOT_FOUND: Could not find registered platform with name: "cuda". Available platform names are: Host Interpreter
+[2022-07-06 19:22:16,524][absl][INFO] - Unable to initialize backend 'tpu': INVALID_ARGUMENT: TpuPlatform is not available.
+[2022-07-06 19:22:16,524][absl][WARNING] - No GPU/TPU found, falling back to CPU. (Set TF_CPP_MIN_LOG_LEVEL=0 and rerun for more info.)
+[2022-07-06 19:22:19,501][TrainMonitor][INFO] - ep: 1,	T: 1,000,	G: -17.2,	avg_r: -0.0172,	avg_G: -17.2,	t: 999,	dt: 1.527ms
+[2022-07-06 19:22:32,677][TrainMonitor][INFO] - ep: 2,	T: 2,000,	G: -75.2,	avg_r: -0.0752,	avg_G: -46.2,	t: 999,	dt: 13.189ms,	SoftClippedDoubleQLearning/EntropyRegularizer/entropy: 2.4,	SoftClippedDoubleQLearning/loss: 0.00482,	SoftPG/EntropyRegularizer/entropy: 3.32,	SoftPG/loss: -0.535
+[2022-07-06 19:22:37,997][TrainMonitor][INFO] - ep: 3,	T: 3,000,	G: -93.8,	avg_r: -0.0939,	avg_G: -62.1,	t: 999,	dt: 5.325ms,	SoftClippedDoubleQLearning/EntropyRegularizer/entropy: 2.76,	SoftClippedDoubleQLearning/loss: 0.00418,	SoftPG/EntropyRegularizer/entropy: 3.83,	SoftPG/loss: -0.449
+[2022-07-06 19:22:43,838][TrainMonitor][INFO] - ep: 4,	T: 4,000,	G: -95.6,	avg_r: -0.0957,	avg_G: -70.4,	t: 999,	dt: 5.847ms,	SoftClippedDoubleQLearning/EntropyRegularizer/entropy: 3.01,	SoftClippedDoubleQLearning/loss: 0.00424,	SoftPG/EntropyRegularizer/entropy: 4.18,	SoftPG/loss: -0.353
+[2022-07-06 19:22:49,763][TrainMonitor][INFO] - ep: 5,	T: 5,000,	G: -94.5,	avg_r: -0.0945,	avg_G: -75.2,	t: 999,	dt: 5.930ms,	SoftClippedDoubleQLearning/EntropyRegularizer/entropy: 3.09,	SoftClippedDoubleQLearning/loss: 0.00397,	SoftPG/EntropyRegularizer/entropy: 4.28,	SoftPG/loss: -0.282
+[2022-07-06 19:22:54,731][TrainMonitor][INFO] - ep: 6,	T: 6,000,	G: -95.8,	avg_r: -0.0959,	avg_G: -78.7,	t: 999,	dt: 4.973ms,	SoftClippedDoubleQLearning/EntropyRegularizer/entropy: 3.08,	SoftClippedDoubleQLearning/loss: 0.0039,	SoftPG/EntropyRegularizer/entropy: 4.27,	SoftPG/loss: -0.218
+[2022-07-06 19:22:57,918][TrainMonitor][INFO] - ep: 7,	T: 6,545,	G: 47.9,	avg_r: 0.0881,	avg_G: -60.6,	t: 544,	dt: 5.858ms,	SoftClippedDoubleQLearning/EntropyRegularizer/entropy: 3.1,	SoftClippedDoubleQLearning/loss: 0.0041,	SoftPG/EntropyRegularizer/entropy: 4.31,	SoftPG/loss: -0.184
+[2022-07-06 19:23:03,593][TrainMonitor][INFO] - ep: 8,	T: 7,545,	G: -96.6,	avg_r: -0.0967,	avg_G: -65.1,	t: 999,	dt: 5.680ms,	SoftClippedDoubleQLearning/EntropyRegularizer/entropy: 3.24,	SoftClippedDoubleQLearning/loss: 2.7,	SoftPG/EntropyRegularizer/entropy: 4.49,	SoftPG/loss: -0.297
+[2022-07-06 19:23:13,385][absl][INFO] - Unable to initialize backend 'tpu_driver': NOT_FOUND: Unable to find driver in registry given worker: 
+[2022-07-06 19:23:13,385][absl][INFO] - Unable to initialize backend 'gpu': NOT_FOUND: Could not find registered platform with name: "cuda". Available platform names are: Host Interpreter
+[2022-07-06 19:23:13,386][absl][INFO] - Unable to initialize backend 'tpu': INVALID_ARGUMENT: TpuPlatform is not available.
+[2022-07-06 19:23:13,386][absl][WARNING] - No GPU/TPU found, falling back to CPU. (Set TF_CPP_MIN_LOG_LEVEL=0 and rerun for more info.)
+[2022-07-06 19:23:16,532][TrainMonitor][INFO] - ep: 1,	T: 1,000,	G: -17.2,	avg_r: -0.0172,	avg_G: -17.2,	t: 999,	dt: 1.549ms
+[2022-07-06 19:23:28,904][TrainMonitor][INFO] - ep: 2,	T: 2,000,	G: -74.6,	avg_r: -0.0746,	avg_G: -45.9,	t: 999,	dt: 12.384ms,	SoftClippedDoubleQLearning/EntropyRegularizer/entropy: 2.41,	SoftClippedDoubleQLearning/loss: 0.00486,	SoftPG/EntropyRegularizer/entropy: 3.33,	SoftPG/loss: -0.539
+[2022-07-06 19:23:33,637][TrainMonitor][INFO] - ep: 3,	T: 3,000,	G: -94.5,	avg_r: -0.0946,	avg_G: -62.1,	t: 999,	dt: 4.737ms,	SoftClippedDoubleQLearning/EntropyRegularizer/entropy: 2.76,	SoftClippedDoubleQLearning/loss: 0.00443,	SoftPG/EntropyRegularizer/entropy: 3.83,	SoftPG/loss: -0.458
+[2022-07-06 19:23:38,449][TrainMonitor][INFO] - ep: 4,	T: 4,000,	G: -94.5,	avg_r: -0.0946,	avg_G: -70.2,	t: 999,	dt: 4.817ms,	SoftClippedDoubleQLearning/EntropyRegularizer/entropy: 2.98,	SoftClippedDoubleQLearning/loss: 0.00431,	SoftPG/EntropyRegularizer/entropy: 4.13,	SoftPG/loss: -0.355
+[2022-07-06 19:23:44,400][TrainMonitor][INFO] - ep: 5,	T: 5,000,	G: -96.4,	avg_r: -0.0965,	avg_G: -75.4,	t: 999,	dt: 5.957ms,	SoftClippedDoubleQLearning/EntropyRegularizer/entropy: 3.07,	SoftClippedDoubleQLearning/loss: 0.00409,	SoftPG/EntropyRegularizer/entropy: 4.27,	SoftPG/loss: -0.289
+[2022-07-06 19:23:50,448][TrainMonitor][INFO] - ep: 6,	T: 6,000,	G: -96.2,	avg_r: -0.0963,	avg_G: -78.9,	t: 999,	dt: 6.054ms,	SoftClippedDoubleQLearning/EntropyRegularizer/entropy: 3.07,	SoftClippedDoubleQLearning/loss: 0.00398,	SoftPG/EntropyRegularizer/entropy: 4.26,	SoftPG/loss: -0.222
+[2022-07-06 19:23:55,435][TrainMonitor][INFO] - ep: 7,	T: 7,000,	G: -95.9,	avg_r: -0.096,	avg_G: -81.3,	t: 999,	dt: 4.992ms,	SoftClippedDoubleQLearning/EntropyRegularizer/entropy: 3.08,	SoftClippedDoubleQLearning/loss: 0.00397,	SoftPG/EntropyRegularizer/entropy: 4.27,	SoftPG/loss: -0.175
+[2022-07-06 19:24:00,483][TrainMonitor][INFO] - ep: 8,	T: 8,000,	G: -96.4,	avg_r: -0.0965,	avg_G: -83.2,	t: 999,	dt: 5.053ms,	SoftClippedDoubleQLearning/EntropyRegularizer/entropy: 3.09,	SoftClippedDoubleQLearning/loss: 0.00404,	SoftPG/EntropyRegularizer/entropy: 4.29,	SoftPG/loss: -0.143
+[2022-07-06 19:24:06,757][TrainMonitor][INFO] - ep: 9,	T: 9,000,	G: -96.6,	avg_r: -0.0967,	avg_G: -84.7,	t: 999,	dt: 6.280ms,	SoftClippedDoubleQLearning/EntropyRegularizer/entropy: 3.12,	SoftClippedDoubleQLearning/loss: 0.00389,	SoftPG/EntropyRegularizer/entropy: 4.33,	SoftPG/loss: -0.123
+[2022-07-06 19:24:39,910][absl][INFO] - Unable to initialize backend 'tpu_driver': NOT_FOUND: Unable to find driver in registry given worker: 
+[2022-07-06 19:24:39,910][absl][INFO] - Unable to initialize backend 'gpu': NOT_FOUND: Could not find registered platform with name: "cuda". Available platform names are: Host Interpreter
+[2022-07-06 19:24:39,911][absl][INFO] - Unable to initialize backend 'tpu': INVALID_ARGUMENT: TpuPlatform is not available.
+[2022-07-06 19:24:39,911][absl][WARNING] - No GPU/TPU found, falling back to CPU. (Set TF_CPP_MIN_LOG_LEVEL=0 and rerun for more info.)
+[2022-07-06 19:24:43,243][TrainMonitor][INFO] - ep: 1,	T: 1,000,	G: -17.2,	avg_r: -0.0172,	avg_G: -17.2,	t: 999,	dt: 1.561ms
+[2022-07-06 19:24:57,143][TrainMonitor][INFO] - ep: 2,	T: 2,000,	G: -75.1,	avg_r: -0.0751,	avg_G: -46.1,	t: 999,	dt: 13.914ms,	SoftClippedDoubleQLearning/EntropyRegularizer/entropy: 2.4,	SoftClippedDoubleQLearning/loss: 0.00476,	SoftPG/EntropyRegularizer/entropy: 3.33,	SoftPG/loss: -0.535
+[2022-07-06 19:25:01,958][TrainMonitor][INFO] - ep: 3,	T: 3,000,	G: -92.7,	avg_r: -0.0927,	avg_G: -61.6,	t: 999,	dt: 4.819ms,	SoftClippedDoubleQLearning/EntropyRegularizer/entropy: 2.69,	SoftClippedDoubleQLearning/loss: 0.00458,	SoftPG/EntropyRegularizer/entropy: 3.73,	SoftPG/loss: -0.436
+[2022-07-06 19:25:06,704][TrainMonitor][INFO] - ep: 4,	T: 4,000,	G: -94.6,	avg_r: -0.0947,	avg_G: -69.9,	t: 999,	dt: 4.751ms,	SoftClippedDoubleQLearning/EntropyRegularizer/entropy: 2.88,	SoftClippedDoubleQLearning/loss: 0.00478,	SoftPG/EntropyRegularizer/entropy: 3.99,	SoftPG/loss: -0.338
+[2022-07-06 19:25:11,544][TrainMonitor][INFO] - ep: 5,	T: 5,000,	G: -94.8,	avg_r: -0.0949,	avg_G: -74.9,	t: 999,	dt: 4.844ms,	SoftClippedDoubleQLearning/EntropyRegularizer/entropy: 2.97,	SoftClippedDoubleQLearning/loss: 0.00427,	SoftPG/EntropyRegularizer/entropy: 4.12,	SoftPG/loss: -0.27
+[2022-07-06 19:25:16,349][TrainMonitor][INFO] - ep: 6,	T: 6,000,	G: -96.2,	avg_r: -0.0963,	avg_G: -78.4,	t: 999,	dt: 4.810ms,	SoftClippedDoubleQLearning/EntropyRegularizer/entropy: 2.97,	SoftClippedDoubleQLearning/loss: 0.00402,	SoftPG/EntropyRegularizer/entropy: 4.12,	SoftPG/loss: -0.207
+[2022-07-06 19:25:22,132][TrainMonitor][INFO] - ep: 7,	T: 7,000,	G: -94.8,	avg_r: -0.0949,	avg_G: -80.8,	t: 999,	dt: 5.788ms,	SoftClippedDoubleQLearning/EntropyRegularizer/entropy: 2.97,	SoftClippedDoubleQLearning/loss: 0.00396,	SoftPG/EntropyRegularizer/entropy: 4.13,	SoftPG/loss: -0.161
+[2022-07-06 19:25:27,818][TrainMonitor][INFO] - ep: 8,	T: 8,000,	G: -95.9,	avg_r: -0.096,	avg_G: -82.6,	t: 999,	dt: 5.691ms,	SoftClippedDoubleQLearning/EntropyRegularizer/entropy: 2.98,	SoftClippedDoubleQLearning/loss: 0.00407,	SoftPG/EntropyRegularizer/entropy: 4.13,	SoftPG/loss: -0.127
+[2022-07-06 19:25:33,052][TrainMonitor][INFO] - ep: 9,	T: 9,000,	G: -95.7,	avg_r: -0.0958,	avg_G: -84.1,	t: 999,	dt: 5.240ms,	SoftClippedDoubleQLearning/EntropyRegularizer/entropy: 2.97,	SoftClippedDoubleQLearning/loss: 0.00389,	SoftPG/EntropyRegularizer/entropy: 4.13,	SoftPG/loss: -0.0997
+[2022-07-06 19:26:05,470][absl][INFO] - Unable to initialize backend 'tpu_driver': NOT_FOUND: Unable to find driver in registry given worker: 
+[2022-07-06 19:26:05,470][absl][INFO] - Unable to initialize backend 'gpu': NOT_FOUND: Could not find registered platform with name: "cuda". Available platform names are: Host Interpreter
+[2022-07-06 19:26:05,471][absl][INFO] - Unable to initialize backend 'tpu': INVALID_ARGUMENT: TpuPlatform is not available.
+[2022-07-06 19:26:05,471][absl][WARNING] - No GPU/TPU found, falling back to CPU. (Set TF_CPP_MIN_LOG_LEVEL=0 and rerun for more info.)
+[2022-07-06 19:26:08,815][TrainMonitor][INFO] - ep: 1,	T: 1,000,	G: -17.2,	avg_r: -0.0172,	avg_G: -17.2,	t: 999,	dt: 1.717ms
+[2022-07-06 19:26:16,422][smac.stats.stats.Stats][INFO] - ##########################################################
+[2022-07-06 19:26:16,422][smac.stats.stats.Stats][INFO] - Statistics:
+[2022-07-06 19:26:16,423][smac.stats.stats.Stats][INFO] - #Incumbent changed: 0
+[2022-07-06 19:26:16,423][smac.stats.stats.Stats][INFO] - #Submitted target algorithm runs: 8 / 250.0
+[2022-07-06 19:26:16,423][smac.stats.stats.Stats][INFO] - #Finished target algorithm runs: 8 / 250.0
+[2022-07-06 19:26:16,423][smac.stats.stats.Stats][INFO] - #Configurations: 8
+[2022-07-06 19:26:16,423][smac.stats.stats.Stats][INFO] - Used wallclock time: 325.91 / inf sec 
+[2022-07-06 19:26:16,423][smac.stats.stats.Stats][INFO] - Used target algorithm runtime: 324.56 / inf sec
+[2022-07-06 19:26:16,423][smac.stats.stats.Stats][INFO] - ##########################################################
+[2022-07-06 19:26:16,423][smac.facade.smac_bb_facade.SMAC4BB][INFO] - Final Incumbent: Configuration:
+  goal_position, Value: False
+  goal_velocity, Value: False
+  max_position, Value: True
+  max_position_start, Value: False
+  max_speed, Value: True
+  max_velocity_start, Value: False
+  min_position, Value: True
+  min_position_start, Value: True
+  min_velocity_start, Value: True
+  power, Value: True
+
+[2022-07-06 19:26:16,423][smac.facade.smac_bb_facade.SMAC4BB][INFO] - Estimated cost of incumbent: -41.680000

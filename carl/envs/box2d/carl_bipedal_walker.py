@@ -1,6 +1,5 @@
-from typing import Any, Dict, List, Optional, Tuple, Union
+from typing import Dict, List, Optional, Union
 
-import Box2D
 import numpy as np
 from gym import spaces
 from gym.envs.box2d import bipedal_walker
@@ -8,11 +7,14 @@ from gym.envs.box2d import bipedal_walker as bpw
 from Box2D.b2 import edgeShape, fixtureDef, polygonShape
 from gym.utils import EzPickle
 
+
+from carl.context.selection import AbstractSelector
 from carl.envs.carl_env import CARLEnv
 from carl.utils.trial_logger import TrialLogger
 
 from carl.context_encoders import ContextEncoder
 from carl.context.selection import AbstractSelector
+from carl.utils.types import Context, Contexts
 
 DEFAULT_CONTEXT = {
     "FPS": 50,
@@ -83,17 +85,19 @@ class CARLBipedalWalkerEnv(CARLEnv):
     def __init__(
         self,
         env: Optional[bipedal_walker.BipedalWalker] = None,
-        contexts: Dict[Any, Dict[Any, Any]] = {},
+        contexts: Contexts = {},
         hide_context: bool = True,
         add_gaussian_noise_to_context: bool = False,
         gaussian_noise_std_percentage: float = 0.05,
         logger: Optional[TrialLogger] = None,
         scale_context_features: str = "no",
-        default_context: Optional[Dict] = DEFAULT_CONTEXT,
+        default_context: Optional[Context] = DEFAULT_CONTEXT,
         state_context_features: Optional[List[str]] = None,
         context_mask: Optional[List[str]] = None,
         dict_observation_space: bool = False,
-        context_selector: Optional[Union[AbstractSelector, type(AbstractSelector)]] = None,
+        context_selector: Optional[
+            Union[AbstractSelector, type[AbstractSelector]]
+        ] = None,
         context_selector_kwargs: Optional[Dict] = None,
         context_encoder: Optional[ContextEncoder] = None,
     ):
@@ -131,7 +135,8 @@ class CARLBipedalWalkerEnv(CARLEnv):
             DEFAULT_CONTEXT.keys()
         )  # allow to augment all values
 
-    def _update_context(self):
+    def _update_context(self) -> None:
+        self.env: bipedal_walker.BipedalWalker
         bpw.FPS = self.context["FPS"]
         bpw.SCALE = self.context["SCALE"]
         bpw.FRICTION = self.context["FRICTION"]
@@ -200,7 +205,9 @@ class CARLBipedalWalkerEnv(CARLEnv):
         self.env.world.gravity = gravity
 
 
-def demo_heuristic(env: Union[CARLBipedalWalkerEnv, bipedal_walker.BipedalWalker]) -> None:
+def demo_heuristic(
+    env: Union[CARLBipedalWalkerEnv, bipedal_walker.BipedalWalker]
+) -> None:
     env.reset()
     steps = 0
     total_reward = 0
@@ -228,10 +235,10 @@ def demo_heuristic(env: Union[CARLBipedalWalkerEnv, bipedal_walker.BipedalWalker
         moving_s_base = 4 + 5 * moving_leg
         supporting_s_base = 4 + 5 * supporting_leg
 
-        hip_targ = [None, None]  # -0.8 .. +1.1
-        knee_targ = [None, None]  # -0.6 .. +0.9
-        hip_todo = [0.0, 0.0]
-        knee_todo = [0.0, 0.0]
+        hip_targ = np.array([None, None])  # -0.8 .. +1.1
+        knee_targ = np.array([None, None])  # -0.6 .. +0.9
+        hip_todo = np.array([0.0, 0.0])
+        knee_todo = np.array([0.0, 0.0])
 
         if state == STAY_ON_ONE_LEG:
             hip_targ[moving_leg] = 1.1

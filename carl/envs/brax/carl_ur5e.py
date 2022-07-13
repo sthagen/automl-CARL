@@ -6,14 +6,15 @@ import json
 import brax
 import numpy as np
 from brax.envs.ur5e import _SYSTEM_CONFIG, Ur5e
-from brax.envs.wrappers import GymWrapper, VectorWrapper, VectorGymWrapper
+from brax.envs.wrappers import GymWrapper, VectorGymWrapper, VectorWrapper
 from google.protobuf import json_format, text_format
 from google.protobuf.json_format import MessageToDict
 from numpyencoder import NumpyEncoder
 
+from carl.context.selection import AbstractSelector
 from carl.envs.carl_env import CARLEnv
 from carl.utils.trial_logger import TrialLogger
-from carl.context.selection import AbstractSelector
+from carl.utils.types import Context, Contexts
 
 from carl.context_encoders import ContextEncoder
 
@@ -95,6 +96,7 @@ class CARLUr5e(CARLEnv):
         )  # allow to augment all values
 
     def _update_context(self) -> None:
+        self.env: Ur5e
         config = copy.deepcopy(self.base_config)
         config["gravity"] = {"z": self.context["gravity"]}
         config["friction"] = self.context["friction"]

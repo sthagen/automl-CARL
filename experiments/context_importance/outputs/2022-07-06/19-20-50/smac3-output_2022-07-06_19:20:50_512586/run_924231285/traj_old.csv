@@ -1,0 +1,3 @@
+"CPU Time Used","Estimated Training Performance","Wallclock Time","Incumbent ID","Automatic Configurator (CPU) Time","Configuration..."
+0.000000, 2147483648.000000, 0.008592, 1, 0.008592, goal_position='False', goal_velocity='False', max_position='True', max_position_start='False', max_speed='True', max_velocity_start='False', min_position='True', min_position_start='True', min_velocity_start='True', power='True'
+80.998117, -41.680000, 81.034611, 1, 0.036494, goal_position='False', goal_velocity='False', max_position='True', max_position_start='False', max_speed='True', max_velocity_start='False', min_position='True', min_position_start='True', min_velocity_start='True', power='True'

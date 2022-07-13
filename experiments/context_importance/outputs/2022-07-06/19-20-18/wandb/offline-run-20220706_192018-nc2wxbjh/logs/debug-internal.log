@@ -1,0 +1,20 @@
+2022-07-06 19:20:18,878 INFO    MainThread:15206 [internal.py:wandb_internal():90] W&B internal server running at pid: 15206, started at: 2022-07-06 19:20:18.878338
+2022-07-06 19:20:18,879 DEBUG   HandlerThread:15206 [handler.py:handle_request():141] handle_request: run_start
+2022-07-06 19:20:18,879 INFO    WriterThread:15206 [datastore.py:open_for_write():75] open: /home/mohan/git/current_projects/contextual_rl/attention/CARL/experiments/context_importance/outputs/2022-07-06/19-20-18/wandb/offline-run-20220706_192018-nc2wxbjh/run-nc2wxbjh.wandb
+2022-07-06 19:20:18,881 DEBUG   HandlerThread:15206 [meta.py:__init__():35] meta init
+2022-07-06 19:20:18,881 DEBUG   HandlerThread:15206 [meta.py:__init__():49] meta init done
+2022-07-06 19:20:18,881 DEBUG   HandlerThread:15206 [meta.py:probe():209] probe
+2022-07-06 19:20:18,887 DEBUG   HandlerThread:15206 [meta.py:_setup_git():199] setup git
+2022-07-06 19:20:18,894 DEBUG   HandlerThread:15206 [meta.py:_setup_git():206] setup git done
+2022-07-06 19:20:18,894 DEBUG   HandlerThread:15206 [meta.py:_save_pip():53] save pip
+2022-07-06 19:20:18,894 DEBUG   HandlerThread:15206 [meta.py:_save_pip():67] save pip done
+2022-07-06 19:20:18,894 DEBUG   HandlerThread:15206 [meta.py:_save_conda():74] save conda
+2022-07-06 19:20:23,352 DEBUG   HandlerThread:15206 [meta.py:_save_conda():84] save conda done
+2022-07-06 19:20:23,352 DEBUG   HandlerThread:15206 [meta.py:probe():247] probe done
+2022-07-06 19:20:24,350 WARNING MainThread:15206 [internal.py:wandb_internal():153] Internal process interrupt: 1
+2022-07-06 19:20:24,561 WARNING MainThread:15206 [internal.py:wandb_internal():153] Internal process interrupt: 2
+2022-07-06 19:20:24,561 ERROR   MainThread:15206 [internal.py:wandb_internal():156] Internal process interrupted.
+2022-07-06 19:20:24,881 INFO    SenderThread:15206 [sender.py:finish():1111] shutting down sender
+2022-07-06 19:20:25,372 INFO    WriterThread:15206 [datastore.py:close():279] close: /home/mohan/git/current_projects/contextual_rl/attention/CARL/experiments/context_importance/outputs/2022-07-06/19-20-18/wandb/offline-run-20220706_192018-nc2wxbjh/run-nc2wxbjh.wandb
+2022-07-06 19:20:25,373 INFO    HandlerThread:15206 [handler.py:finish():806] shutting down handler
+2022-07-06 19:20:25,374 INFO    MainThread:15206 [internal.py:handle_exit():80] Internal process exited

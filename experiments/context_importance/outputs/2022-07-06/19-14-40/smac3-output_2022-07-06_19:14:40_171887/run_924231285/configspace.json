@@ -1,0 +1,68 @@
+{
+  "hyperparameters": [
+    {
+      "name": "force_magnifier",
+      "type": "categorical",
+      "choices": [
+        false,
+        true
+      ],
+      "default": false,
+      "probabilities": null
+    },
+    {
+      "name": "gravity",
+      "type": "categorical",
+      "choices": [
+        false,
+        true
+      ],
+      "default": true,
+      "probabilities": null
+    },
+    {
+      "name": "masscart",
+      "type": "categorical",
+      "choices": [
+        false,
+        true
+      ],
+      "default": false,
+      "probabilities": null
+    },
+    {
+      "name": "masspole",
+      "type": "categorical",
+      "choices": [
+        false,
+        true
+      ],
+      "default": false,
+      "probabilities": null
+    },
+    {
+      "name": "pole_length",
+      "type": "categorical",
+      "choices": [
+        false,
+        true
+      ],
+      "default": false,
+      "probabilities": null
+    },
+    {
+      "name": "update_interval",
+      "type": "categorical",
+      "choices": [
+        false,
+        true
+      ],
+      "default": false,
+      "probabilities": null
+    }
+  ],
+  "conditions": [],
+  "forbiddens": [],
+  "python_module_version": "0.4.20",
+  "json_format_version": 0.2
+}

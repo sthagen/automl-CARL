@@ -1,0 +1,256 @@
+{
+  "data": [
+    [
+      [
+        1,
+        null,
+        0,
+        0.0
+      ],
+      [
+        -41.67999999999902,
+        80.99811697006226,
+        {
+          "__enum__": "StatusType.SUCCESS"
+        },
+        1657128050.524123,
+        1657128131.548921,
+        {}
+      ]
+    ],
+    [
+      [
+        2,
+        null,
+        0,
+        0.0
+      ],
+      [
+        2147483647.0,
+        56.57626128196716,
+        {
+          "__enum__": "StatusType.CRASHED"
+        },
+        1657128131.5503976,
+        1657128188.1268365,
+        {}
+      ]
+    ],
+    [
+      [
+        3,
+        null,
+        0,
+        0.0
+      ],
+      [
+        -2.881291014771767,
+        86.40382242202759,
+        {
+          "__enum__": "StatusType.SUCCESS"
+        },
+        1657128188.2653186,
+        1657128274.6985664,
+        {}
+      ]
+    ],
+    [
+      [
+        4,
+        null,
+        0,
+        0.0
+      ],
+      [
+        -0.1668959354931703,
+        85.42337489128113,
+        {
+          "__enum__": "StatusType.SUCCESS"
+        },
+        1657128274.7897155,
+        1657128360.240009,
+        {}
+      ]
+    ],
+    [
+      [
+        5,
+        null,
+        0,
+        0.0
+      ],
+      [
+        2147483647.0,
+        14.586743593215942,
+        {
+          "__enum__": "StatusType.CRASHED"
+        },
+        1657128360.3513896,
+        1657128375.0588562,
+        {}
+      ]
+    ],
+    [
+      [
+        6,
+        null,
+        0,
+        0.0
+      ],
+      [
+        2147483647.0,
+        0.24264144897460938,
+        {
+          "__enum__": "StatusType.CRASHED"
+        },
+        1657128375.1795979,
+        1657128375.4416356,
+        {}
+      ]
+    ],
+    [
+      [
+        7,
+        null,
+        0,
+        0.0
+      ],
+      [
+        2147483647.0,
+        0.26522159576416016,
+        {
+          "__enum__": "StatusType.CRASHED"
+        },
+        1657128375.6375034,
+        1657128375.9211009,
+        {}
+      ]
+    ],
+    [
+      [
+        8,
+        null,
+        0,
+        0.0
+      ],
+      [
+        2147483647.0,
+        0.06284451484680176,
+        {
+          "__enum__": "StatusType.CRASHED"
+        },
+        1657128376.1267307,
+        1657128376.2209277,
+        {}
+      ]
+    ]
+  ],
+  "config_origins": {
+    "1": "Sobol",
+    "2": "Sobol",
+    "3": "Local Search",
+    "4": "Local Search",
+    "5": "Local Search",
+    "6": "Local Search",
+    "7": "Local Search",
+    "8": "Local Search"
+  },
+  "configs": {
+    "1": {
+      "goal_position": false,
+      "goal_velocity": false,
+      "max_position": true,
+      "max_position_start": false,
+      "max_speed": true,
+      "max_velocity_start": false,
+      "min_position": true,
+      "min_position_start": true,
+      "min_velocity_start": true,
+      "power": true
+    },
+    "2": {
+      "goal_position": true,
+      "goal_velocity": true,
+      "max_position": false,
+      "max_position_start": true,
+      "max_speed": false,
+      "max_velocity_start": true,
+      "min_position": false,
+      "min_position_start": false,
+      "min_velocity_start": false,
+      "power": false
+    },
+    "3": {
+      "goal_position": false,
+      "goal_velocity": false,
+      "max_position": true,
+      "max_position_start": false,
+      "max_speed": true,
+      "max_velocity_start": false,
+      "min_position": false,
+      "min_position_start": true,
+      "min_velocity_start": true,
+      "power": true
+    },
+    "4": {
+      "goal_position": false,
+      "goal_velocity": false,
+      "max_position": true,
+      "max_position_start": false,
+      "max_speed": true,
+      "max_velocity_start": false,
+      "min_position": true,
+      "min_position_start": false,
+      "min_velocity_start": true,
+      "power": true
+    },
+    "5": {
+      "goal_position": false,
+      "goal_velocity": false,
+      "max_position": true,
+      "max_position_start": false,
+      "max_speed": true,
+      "max_velocity_start": false,
+      "min_position": false,
+      "min_position_start": false,
+      "min_velocity_start": true,
+      "power": true
+    },
+    "6": {
+      "goal_position": false,
+      "goal_velocity": false,
+      "max_position": true,
+      "max_position_start": false,
+      "max_speed": true,
+      "max_velocity_start": false,
+      "min_position": true,
+      "min_position_start": true,
+      "min_velocity_start": false,
+      "power": true
+    },
+    "7": {
+      "goal_position": false,
+      "goal_velocity": false,
+      "max_position": true,
+      "max_position_start": false,
+      "max_speed": true,
+      "max_velocity_start": false,
+      "min_position": true,
+      "min_position_start": true,
+      "min_velocity_start": true,
+      "power": false
+    },
+    "8": {
+      "goal_position": false,
+      "goal_velocity": false,
+      "max_position": false,
+      "max_position_start": false,
+      "max_speed": true,
+      "max_velocity_start": false,
+      "min_position": true,
+      "min_position_start": true,
+      "min_velocity_start": true,
+      "power": true
+    }
+  }
+}

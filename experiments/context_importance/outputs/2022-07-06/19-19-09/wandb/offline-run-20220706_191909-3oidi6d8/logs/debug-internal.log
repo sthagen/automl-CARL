@@ -1,0 +1,26 @@
+2022-07-06 19:19:09,811 INFO    MainThread:12377 [internal.py:wandb_internal():90] W&B internal server running at pid: 12377, started at: 2022-07-06 19:19:09.811285
+2022-07-06 19:19:09,812 DEBUG   HandlerThread:12377 [handler.py:handle_request():141] handle_request: run_start
+2022-07-06 19:19:09,812 INFO    WriterThread:12377 [datastore.py:open_for_write():75] open: /home/mohan/git/current_projects/contextual_rl/attention/CARL/experiments/context_importance/outputs/2022-07-06/19-19-09/wandb/offline-run-20220706_191909-3oidi6d8/run-3oidi6d8.wandb
+2022-07-06 19:19:09,814 DEBUG   HandlerThread:12377 [meta.py:__init__():35] meta init
+2022-07-06 19:19:09,814 DEBUG   HandlerThread:12377 [meta.py:__init__():49] meta init done
+2022-07-06 19:19:09,814 DEBUG   HandlerThread:12377 [meta.py:probe():209] probe
+2022-07-06 19:19:09,820 DEBUG   HandlerThread:12377 [meta.py:_setup_git():199] setup git
+2022-07-06 19:19:09,826 DEBUG   HandlerThread:12377 [meta.py:_setup_git():206] setup git done
+2022-07-06 19:19:09,826 DEBUG   HandlerThread:12377 [meta.py:_save_pip():53] save pip
+2022-07-06 19:19:09,827 DEBUG   HandlerThread:12377 [meta.py:_save_pip():67] save pip done
+2022-07-06 19:19:09,827 DEBUG   HandlerThread:12377 [meta.py:_save_conda():74] save conda
+2022-07-06 19:19:14,175 DEBUG   HandlerThread:12377 [meta.py:_save_conda():84] save conda done
+2022-07-06 19:19:14,175 DEBUG   HandlerThread:12377 [meta.py:probe():247] probe done
+2022-07-06 19:19:17,103 DEBUG   HandlerThread:12377 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-06 19:19:29,200 DEBUG   HandlerThread:12377 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-06 19:19:33,958 DEBUG   HandlerThread:12377 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-06 19:19:38,813 DEBUG   HandlerThread:12377 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-06 19:19:43,925 DEBUG   HandlerThread:12377 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-06 19:19:49,108 DEBUG   HandlerThread:12377 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-06 19:19:50,831 WARNING MainThread:12377 [internal.py:wandb_internal():153] Internal process interrupt: 1
+2022-07-06 19:19:50,995 WARNING MainThread:12377 [internal.py:wandb_internal():153] Internal process interrupt: 2
+2022-07-06 19:19:50,995 ERROR   MainThread:12377 [internal.py:wandb_internal():156] Internal process interrupted.
+2022-07-06 19:19:51,818 INFO    SenderThread:12377 [sender.py:finish():1111] shutting down sender
+2022-07-06 19:19:51,833 INFO    WriterThread:12377 [datastore.py:close():279] close: /home/mohan/git/current_projects/contextual_rl/attention/CARL/experiments/context_importance/outputs/2022-07-06/19-19-09/wandb/offline-run-20220706_191909-3oidi6d8/run-3oidi6d8.wandb
+2022-07-06 19:19:51,834 INFO    HandlerThread:12377 [handler.py:finish():806] shutting down handler
+2022-07-06 19:19:51,835 INFO    MainThread:12377 [internal.py:handle_exit():80] Internal process exited

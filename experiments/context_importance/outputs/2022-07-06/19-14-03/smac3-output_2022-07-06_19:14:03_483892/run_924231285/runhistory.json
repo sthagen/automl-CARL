@@ -1,0 +1,35 @@
+{
+  "data": [
+    [
+      [
+        1,
+        null,
+        0,
+        0.0
+      ],
+      [
+        2147483647.0,
+        6.016030311584473,
+        {
+          "__enum__": "StatusType.CRASHED"
+        },
+        1657127643.4951339,
+        1657127649.511414,
+        {}
+      ]
+    ]
+  ],
+  "config_origins": {
+    "1": "Sobol"
+  },
+  "configs": {
+    "1": {
+      "force_magnifier": false,
+      "gravity": false,
+      "masscart": true,
+      "masspole": false,
+      "pole_length": true,
+      "update_interval": false
+    }
+  }
+}

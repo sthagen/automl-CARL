@@ -1,0 +1,1 @@
+{"cpu_time": 0.0, "wallclock_time": 0.008450031280517578, "evaluations": 0, "cost": 2147483648, "incumbent": {"force_magnifier": false, "gravity": false, "masscart": true, "masspole": false, "pole_length": true, "update_interval": false}, "budget": 0, "origin": "Sobol"}

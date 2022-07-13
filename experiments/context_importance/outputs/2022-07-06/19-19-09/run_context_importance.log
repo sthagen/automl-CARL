@@ -1,0 +1,11 @@
+[2022-07-06 19:19:09,311][smac.utils.io.cmd_reader.CMDReader][INFO] - Output to smac3-output_2022-07-06_19:19:09_311047
+[2022-07-06 19:19:14,232][absl][INFO] - Unable to initialize backend 'tpu_driver': NOT_FOUND: Unable to find driver in registry given worker: 
+[2022-07-06 19:19:14,233][absl][INFO] - Unable to initialize backend 'gpu': NOT_FOUND: Could not find registered platform with name: "cuda". Available platform names are: Interpreter Host
+[2022-07-06 19:19:14,233][absl][INFO] - Unable to initialize backend 'tpu': INVALID_ARGUMENT: TpuPlatform is not available.
+[2022-07-06 19:19:14,233][absl][WARNING] - No GPU/TPU found, falling back to CPU. (Set TF_CPP_MIN_LOG_LEVEL=0 and rerun for more info.)
+[2022-07-06 19:19:17,103][TrainMonitor][INFO] - ep: 1,	T: 1,000,	G: -17.2,	avg_r: -0.0172,	avg_G: -17.2,	t: 999,	dt: 1.517ms
+[2022-07-06 19:19:29,199][TrainMonitor][INFO] - ep: 2,	T: 2,000,	G: -76,	avg_r: -0.0761,	avg_G: -46.6,	t: 999,	dt: 12.108ms,	SoftClippedDoubleQLearning/EntropyRegularizer/entropy: 2.43,	SoftClippedDoubleQLearning/loss: 0.00463,	SoftPG/EntropyRegularizer/entropy: 3.36,	SoftPG/loss: -0.54
+[2022-07-06 19:19:33,957][TrainMonitor][INFO] - ep: 3,	T: 3,000,	G: -95.3,	avg_r: -0.0954,	avg_G: -62.8,	t: 999,	dt: 4.762ms,	SoftClippedDoubleQLearning/EntropyRegularizer/entropy: 2.73,	SoftClippedDoubleQLearning/loss: 0.00547,	SoftPG/EntropyRegularizer/entropy: 3.78,	SoftPG/loss: -0.449
+[2022-07-06 19:19:38,812][TrainMonitor][INFO] - ep: 4,	T: 4,000,	G: -95.1,	avg_r: -0.0952,	avg_G: -70.9,	t: 999,	dt: 4.860ms,	SoftClippedDoubleQLearning/EntropyRegularizer/entropy: 3,	SoftClippedDoubleQLearning/loss: 0.00472,	SoftPG/EntropyRegularizer/entropy: 4.16,	SoftPG/loss: -0.357
+[2022-07-06 19:19:43,924][TrainMonitor][INFO] - ep: 5,	T: 5,000,	G: -95.8,	avg_r: -0.0959,	avg_G: -75.9,	t: 999,	dt: 5.118ms,	SoftClippedDoubleQLearning/EntropyRegularizer/entropy: 3.07,	SoftClippedDoubleQLearning/loss: 0.00461,	SoftPG/EntropyRegularizer/entropy: 4.27,	SoftPG/loss: -0.29
+[2022-07-06 19:19:49,108][TrainMonitor][INFO] - ep: 6,	T: 6,000,	G: -96.2,	avg_r: -0.0963,	avg_G: -79.3,	t: 999,	dt: 5.188ms,	SoftClippedDoubleQLearning/EntropyRegularizer/entropy: 3.07,	SoftClippedDoubleQLearning/loss: 0.00458,	SoftPG/EntropyRegularizer/entropy: 4.26,	SoftPG/loss: -0.226

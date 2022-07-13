@@ -1,13 +1,14 @@
-from typing import Any, Dict, List, Optional, Union
+from typing import Dict, List, Optional, Union
 
-import gym
 import numpy as np
 from gym.envs.classic_control import AcrobotEnv
 
+from carl.context.selection import AbstractSelector
 from carl.envs.carl_env import CARLEnv
 from carl.utils.trial_logger import TrialLogger
 from carl.context.selection import AbstractSelector
 from carl.context_encoders import ContextEncoder
+from carl.utils.types import Context, Contexts
 
 DEFAULT_CONTEXT = {
     "link_length_1": 1,  # should be seen as 100% default and scaled
@@ -75,14 +76,22 @@ class CustomAcrobotEnv(AcrobotEnv):
         *,
         seed: Optional[int] = None,
         return_info: bool = False,
-        options: Optional[dict] = None
-    ):
+        options: Optional[dict] = None,
+    ) -> Union[np.ndarray, tuple[np.ndarray, dict]]:
         super().reset(seed=seed)
-        low = self.INITIAL_ANGLE_LOWER, self.INITIAL_ANGLE_LOWER, self.INITIAL_VELOCITY_LOWER, self.INITIAL_VELOCITY_LOWER
-        high = self.INITIAL_ANGLE_UPPER, self.INITIAL_ANGLE_UPPER, self.INITIAL_VELOCITY_UPPER, self.INITIAL_VELOCITY_UPPER
-        self.state = self.np_random.uniform(low=low, high=high).astype(
-            np.float32
+        low = (
+            self.INITIAL_ANGLE_LOWER,
+            self.INITIAL_ANGLE_LOWER,
+            self.INITIAL_VELOCITY_LOWER,
+            self.INITIAL_VELOCITY_LOWER,
         )
+        high = (
+            self.INITIAL_ANGLE_UPPER,
+            self.INITIAL_ANGLE_UPPER,
+            self.INITIAL_VELOCITY_UPPER,
+            self.INITIAL_VELOCITY_UPPER,
+        )
+        self.state = self.np_random.uniform(low=low, high=high).astype(np.float32)
         if not return_info:
             return self._get_ob()
         else:
@@ -92,19 +101,21 @@ class CustomAcrobotEnv(AcrobotEnv):
 class CARLAcrobotEnv(CARLEnv):
     def __init__(
         self,
-        env: gym.Env = CustomAcrobotEnv(),
-        contexts: Dict[Any, Dict[Any, Any]] = {},
+        env: CustomAcrobotEnv = CustomAcrobotEnv(),
+        contexts: Contexts = {},
         hide_context: bool = True,
         add_gaussian_noise_to_context: bool = False,
         gaussian_noise_std_percentage: float = 0.01,
         logger: Optional[TrialLogger] = None,
         scale_context_features: str = "no",
-        default_context: Optional[Dict] = DEFAULT_CONTEXT,
+        default_context: Optional[Context] = DEFAULT_CONTEXT,
         max_episode_length: int = 500,  # from https://github.com/openai/gym/blob/master/gym/envs/__init__.py
         state_context_features: Optional[List[str]] = None,
         context_mask: Optional[List[str]] = None,
         dict_observation_space: bool = False,
-        context_selector: Optional[Union[AbstractSelector, type(AbstractSelector)]] = None,
+        context_selector: Optional[
+            Union[AbstractSelector, type[AbstractSelector]]
+        ] = None,
         context_selector_kwargs: Optional[Dict] = None,
         context_encoder: Optional[ContextEncoder] = None,
     ):
@@ -132,6 +143,7 @@ class CARLAcrobotEnv(CARLEnv):
         )  # allow to augment all values
 
     def _update_context(self) -> None:
+        self.env: CustomAcrobotEnv
         self.env.LINK_LENGTH_1 = self.context["link_length_1"]
         self.env.LINK_LENGTH_2 = self.context["link_length_2"]
         self.env.LINK_MASS_1 = self.context["link_mass_1"]

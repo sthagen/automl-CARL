@@ -1,14 +1,15 @@
-from typing import Any, Dict, List, Optional, Union
+from typing import Dict, List, Optional, Union
 
-import gym
 import numpy as np
 from gym.envs.classic_control import CartPoleEnv
 
+from carl.context.selection import AbstractSelector
 from carl.envs.carl_env import CARLEnv
 from carl.utils.trial_logger import TrialLogger
 from carl.context.selection import AbstractSelector
 from carl.context_encoders import ContextEncoder
 
+from carl.utils.types import Context, Contexts
 
 DEFAULT_CONTEXT = {
     "gravity": 9.8,
@@ -38,7 +39,7 @@ CONTEXT_BOUNDS = {
 
 
 class CustomCartPoleEnv(CartPoleEnv):
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__()
         self.initial_state_lower = -0.05
         self.initial_state_upper = 0.05
@@ -49,9 +50,11 @@ class CustomCartPoleEnv(CartPoleEnv):
         seed: Optional[int] = None,
         return_info: bool = False,
         options: Optional[dict] = None,
-    ):
+    ) -> Union[np.ndarray, tuple[np.ndarray, dict]]:
         super().reset(seed=seed)
-        self.state = self.np_random.uniform(low=self.initial_state_lower, high=self.initial_state_upper, size=(4,))
+        self.state = self.np_random.uniform(
+            low=self.initial_state_lower, high=self.initial_state_upper, size=(4,)
+        )
         self.steps_beyond_done = None
         if not return_info:
             return np.array(self.state, dtype=np.float32)
@@ -65,19 +68,21 @@ class CARLCartPoleEnv(CARLEnv):
     """
     def __init__(
         self,
-        env: gym.Env = CustomCartPoleEnv(),
-        contexts: Dict[Any, Dict[Any, Any]] = {},
+        env: CustomCartPoleEnv = CustomCartPoleEnv(),
+        contexts: Contexts = {},
         hide_context: bool = True,
         add_gaussian_noise_to_context: bool = False,
         gaussian_noise_std_percentage: float = 0.01,
         logger: Optional[TrialLogger] = None,
         scale_context_features: str = "no",
-        default_context: Optional[Dict] = DEFAULT_CONTEXT,
+        default_context: Optional[Context] = DEFAULT_CONTEXT,
         max_episode_length: int = 500,  # from https://github.com/openai/gym/blob/master/gym/envs/__init__.py
         state_context_features: Optional[List[str]] = None,
         context_mask: Optional[List[str]] = None,
         dict_observation_space: bool = False,
-        context_selector: Optional[Union[AbstractSelector, type(AbstractSelector)]] = None,
+        context_selector: Optional[
+            Union[AbstractSelector, type[AbstractSelector]]
+        ] = None,
         context_selector_kwargs: Optional[Dict] = None,
         context_encoder: Optional[ContextEncoder] = None,
     ):
@@ -105,6 +110,7 @@ class CARLCartPoleEnv(CARLEnv):
         )  # allow to augment all values
 
     def _update_context(self) -> None:
+        self.env: CustomCartPoleEnv
         self.env.gravity = self.context["gravity"]
         self.env.masscart = self.context["masscart"]
         self.env.masspole = self.context["masspole"]
