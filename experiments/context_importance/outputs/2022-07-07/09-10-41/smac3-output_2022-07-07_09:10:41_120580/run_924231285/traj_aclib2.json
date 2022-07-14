@@ -1,1 +1,0 @@
-{"cpu_time": 0.0, "wallclock_time": 0.009052276611328125, "evaluations": 0, "cost": 2147483648, "incumbent": ["goal_position='False'", "goal_velocity='False'", "max_position='True'", "max_position_start='False'", "max_speed='True'", "max_velocity_start='False'", "min_position='True'", "min_position_start='True'", "min_velocity_start='True'", "power='True'"], "origin": "Sobol"}

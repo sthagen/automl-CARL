@@ -1,6 +1,0 @@
-force_magnifier categorical {False, True} [False]
-gravity categorical {False, True} [True]
-masscart categorical {False, True} [False]
-masspole categorical {False, True} [False]
-pole_length categorical {False, True} [False]
-update_interval categorical {False, True} [False]
