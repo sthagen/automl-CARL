@@ -1,0 +1,20 @@
+[2022-07-13 11:05:10,959][smac.utils.io.cmd_reader.CMDReader][INFO] - Output to smac3-output_2022-07-13_11:05:10_958508
+[2022-07-13 11:05:10,962][smac.facade.smac_bb_facade.SMAC4BB][INFO] - Optimizing a deterministic scenario for quality without a tuner timeout - will make SMAC deterministic and only evaluate one configuration per iteration!
+[2022-07-13 11:05:10,966][smac.initial_design.sobol_design.SobolDesign][INFO] - Running initial design for 2 configurations
+[2022-07-13 11:05:10,967][smac.facade.smac_bb_facade.SMAC4BB][INFO] - <class 'smac.facade.smac_bb_facade.SMAC4BB'>
+[2022-07-13 11:05:10,967][smac.optimizer.smbo.SMBO][INFO] - Running initial design
+[2022-07-13 11:05:10,982][smac.intensification.intensification.Intensifier][INFO] - First run, no incumbent provided; challenger is assumed to be the incumbent
+[2022-07-13 11:05:16,149][absl][INFO] - Unable to initialize backend 'tpu_driver': NOT_FOUND: Unable to find driver in registry given worker: 
+[2022-07-13 11:05:16,150][absl][INFO] - Unable to initialize backend 'gpu': NOT_FOUND: Could not find registered platform with name: "cuda". Available platform names are: Interpreter Host
+[2022-07-13 11:05:16,150][absl][INFO] - Unable to initialize backend 'tpu': INVALID_ARGUMENT: TpuPlatform is not available.
+[2022-07-13 11:05:16,150][absl][WARNING] - No GPU/TPU found, falling back to CPU. (Set TF_CPP_MIN_LOG_LEVEL=0 and rerun for more info.)
+[2022-07-13 11:05:18,441][smac.stats.stats.Stats][INFO] - ##########################################################
+[2022-07-13 11:05:18,441][smac.stats.stats.Stats][INFO] - Statistics:
+[2022-07-13 11:05:18,442][smac.stats.stats.Stats][INFO] - #Incumbent changed: -1
+[2022-07-13 11:05:18,442][smac.stats.stats.Stats][INFO] - #Submitted target algorithm runs: 1 / 250.0
+[2022-07-13 11:05:18,442][smac.stats.stats.Stats][INFO] - #Finished target algorithm runs: 1 / 250.0
+[2022-07-13 11:05:18,442][smac.stats.stats.Stats][INFO] - #Configurations: 1
+[2022-07-13 11:05:18,442][smac.stats.stats.Stats][INFO] - Used wallclock time: 7.48 / inf sec 
+[2022-07-13 11:05:18,443][smac.stats.stats.Stats][INFO] - Used target algorithm runtime: 7.45 / inf sec
+[2022-07-13 11:05:18,443][smac.stats.stats.Stats][INFO] - ##########################################################
+[2022-07-13 11:05:18,443][smac.facade.smac_bb_facade.SMAC4BB][INFO] - Final Incumbent: None
